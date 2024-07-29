@@ -1,0 +1,7 @@
+.link {
+  color: var(--color-text-grey-dark);
+
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+  }
+}

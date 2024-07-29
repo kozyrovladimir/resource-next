@@ -1,0 +1,13 @@
+.searchIcon {
+  path {
+    stroke: var(--color-text-grey-dark);
+  }
+
+  &:hover {
+    path {
+      stroke: var(--color-main-yellow);
+    }
+    cursor: pointer;
+  }
+}
+

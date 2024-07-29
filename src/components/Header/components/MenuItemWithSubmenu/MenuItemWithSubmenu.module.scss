@@ -1,0 +1,56 @@
+.mainMenuWrapper {
+  display: block;
+}
+
+.menuItem {
+  text-transform: uppercase;
+  color: var(--color-text-grey-dark);
+  position: relative;
+  letter-spacing: 0.03rem;
+}
+
+.menuItem span:hover {
+  color: var(--color-main-yellow);
+  cursor: pointer;
+}
+
+.subMenuWrapper {
+  position: absolute;
+  display: none;
+  padding: 0.75rem 1rem;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  &_leftContent {
+    right: 0;
+  }
+}
+
+.subMenuWrapper_visible {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 200ms ease-in-out forwards;
+  opacity: 0;
+  color: var(--color-text-grey-dark);
+  width: max-content;
+}
+
+@keyframes fadeIn {
+  from {
+    display: none;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.subMenuItem {
+    text-transform: uppercase;
+    color: var(--color-text-grey-dark) !important;
+}
+
+.subMenuItem:hover {
+  color: var(--color-main-yellow) !important;
+}

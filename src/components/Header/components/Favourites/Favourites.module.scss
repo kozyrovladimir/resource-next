@@ -1,0 +1,14 @@
+.icon {
+color: var( --color-text-grey-dark);
+  cursor: pointer;
+  &:hover {
+    color: var(--color-main-yellow);
+  }
+}
+
+.slash {
+  color: var(--color-text-grey-dark);
+  margin-right: 0.6rem;
+  margin-left: 0.5rem;
+  align-self: end;
+}

@@ -1,0 +1,12 @@
+.downArrow {
+  path {
+    stroke: var(--color-main-black);
+  }
+
+  &:hover {
+    path {
+      stroke: var(--color-main-yellow);
+    }
+    cursor: pointer;
+  }
+}

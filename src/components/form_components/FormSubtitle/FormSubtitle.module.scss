@@ -1,0 +1,9 @@
+.formSubtitle {
+  text-align: center;
+  color: var(--color-text-grey-dark);
+  display: block;
+
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+  }
+}

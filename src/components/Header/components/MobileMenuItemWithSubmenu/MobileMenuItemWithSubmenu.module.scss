@@ -1,0 +1,44 @@
+.mobileMenuItem {
+  text-transform: uppercase;
+  color: var(--color-text-grey-dark);
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.mobileMenuItem::before {
+  content: "+ ";
+  color: var(--color-text-grey-dark);
+}
+
+.mobileMenuItem_active::before {
+  content: "- ";
+  color: var(--color-text-grey-dark);
+}
+
+.subMenuWrapper {
+  display: none;
+}
+
+.subMenuWrapper_visible {
+  display: block;
+  transition: display 200ms ease-in-out;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--color-bg-grey);
+  color: var(--color-text-grey-dark);
+}
+
+@keyframes fadeIn {
+  from {
+    display: none;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}

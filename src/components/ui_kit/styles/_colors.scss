@@ -1,0 +1,35 @@
+:root,
+::after,
+::before {
+   /* main */
+    --color-main-black: #222;
+    --color-main-yellow: #FFCE3A;
+    --color-main-grey-dark: #BBB;
+    --color-main-grey: #F5F5F5;
+    --color-main-grey-light: #FAFAFA;
+    --color-main-white: #FFF;
+
+    /* text */
+    --color-text-black: var(--color-main-black);
+    --color-text-black-light: #333;
+    --color-text-grey-dark: #666;
+    --color-text-grey: var(--color-main-grey-dark);
+    --color-text-white: var(--color-main-white);
+
+    /* background */
+    --color-bg-grey: var(--color-main-grey-light);
+    --color-bg-white: var(--color-main-white);
+
+    /* border */
+    --color-border-yellow: var(--color-main-yellow);
+    --color-border-black: var(--color-main-black);
+    --color-border-grey: var(--color-main-grey-dark);
+    --color-border-grey-light: #EDEDED;
+
+    /* notification */
+    --color-notofication-red: #FC6343;
+    --color-notofication-blue: #36A0E6;
+    --color-notofication-green: #34C759;
+    --color-notofication-brown: #7A5749;
+
+}

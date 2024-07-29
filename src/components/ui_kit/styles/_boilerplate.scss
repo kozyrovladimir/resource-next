@@ -1,0 +1,15 @@
+//use in current project
+
+@font-face {
+    font-family: "Mulish";
+    src: url("../assets/fonts/mulish/Mulish-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("../assets/fonts/figtree/Figtree-VariableFont_wght.ttf");
+}
+
+body {
+  font-family: Figtree, sans-serif;
+}
