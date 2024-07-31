@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import * as api from '../../api/api';
-// import * as mockAPI from '../../api/mockAPI';
-import { PaymentHistoryItem } from '../../models/PaymentHistory';
+import {api} from '@/shared';
+
+import { PaymentHistoryItem } from '@/models/PaymentHistory';
 import { userSlice } from '../reducers/user-reducer.slice';
-import { axiosErrorHandler } from '../../utils/helpers/axiosErrorHandler';
+import { axiosErrorHandler } from '@/utils/helpers/axiosErrorHandler';
 
 export const fetchPaymentHistory = createAsyncThunk<
   PaymentHistoryItem[],

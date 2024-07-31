@@ -4,7 +4,7 @@ import { AxiosError } from 'axios';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 
-import * as api from '../../api/api';
+import {api} from '@/shared';
 
 interface usePasswordRecoveryFormI {
   formik: any;

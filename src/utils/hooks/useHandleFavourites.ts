@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {addFavorite, deleteFavorite} from "@/api/api";
+import {api} from '@/shared';
 import {deleteFavoriteVideoListAPI} from "@/store/reducers/favorite-video-list.slice";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "@/store/store";
@@ -24,7 +24,7 @@ export const useHandleFavourites = (id: number, initialIsFavourite: boolean) => 
   const handleFavourite = () => {
     setPending(true);
     if (isFavourite) {
-      deleteFavorite(id)
+      api.deleteFavorite(id)
         .then(() => {
           setIsFavourite(false);
           // additional logic
@@ -40,7 +40,7 @@ export const useHandleFavourites = (id: number, initialIsFavourite: boolean) => 
           setPending(false);
         });
     } else {
-      addFavorite(id)
+      api.addFavorite(id)
         .then(() => {
           setIsFavourite(true);
           setPending(false);

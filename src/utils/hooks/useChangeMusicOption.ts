@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import {useDispatch} from "react-redux";
-import * as api from '../../api/api';
-import {UserDataI} from "../../models/UserData";
-import {setUserData} from "../../store/reducers/user-data.slice";
+import {api} from '@/shared';
+import {UserDataI} from "@/models/UserData";
+import {setUserData} from "@/store/reducers/user-data.slice";
 
 export function useChangeMusicOption(userData: UserDataI) {
 

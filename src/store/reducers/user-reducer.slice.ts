@@ -2,7 +2,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
 
-import * as api from '../../api/api';
+import {api} from '@/shared';
 
 export interface UserStateType {
   isLoading: boolean;

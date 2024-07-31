@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { axiosErrorHandler } from '@/utils/helpers/axiosErrorHandler';
 
-import * as api from '../../api/api';
+import {api} from '@/shared';
 import { userSlice } from '../reducers/user-reducer.slice';
 
 const projectID = 2;

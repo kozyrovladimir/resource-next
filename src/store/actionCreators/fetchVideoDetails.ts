@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import * as api from '../../api/api';
+import {api} from '@/shared';
 import {
   VideoDetailsWithSubscriptionStatusI
-} from '../../models/VideoDetails';
+} from '@/models/VideoDetails';
 import { userSlice } from '../reducers/user-reducer.slice';
-import { axiosErrorHandler } from '../../utils/helpers/axiosErrorHandler';
+import { axiosErrorHandler } from '@/utils/helpers/axiosErrorHandler';
 
 export const fetchVideoDetailsAPI = createAsyncThunk<
   VideoDetailsWithSubscriptionStatusI,

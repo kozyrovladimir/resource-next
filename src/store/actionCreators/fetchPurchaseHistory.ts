@@ -1,8 +1,8 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {PurchaseHistoryItem} from "../../models/PurchaseHistory";
+import {PurchaseHistoryItem} from "@/models/PurchaseHistory";
 import {userSlice} from "../reducers/user-reducer.slice";
-import * as api from '../../api/api';
-import {axiosErrorHandler} from "../../utils/helpers/axiosErrorHandler";
+import {api} from '@/shared';
+import {axiosErrorHandler} from "@/utils/helpers/axiosErrorHandler";
 
 export const fetchPurchaseHistory = createAsyncThunk<
   PurchaseHistoryItem[],

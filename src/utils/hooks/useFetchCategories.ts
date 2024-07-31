@@ -1,10 +1,10 @@
 import {useEffect, useMemo, useState} from 'react';
-import {getCategories} from "../../api/api";
-import {Category} from "../../models/Category";
+import {api} from '@/shared';
+import {Category} from "@/models/Category";
 import {axiosErrorHandler} from "../helpers/axiosErrorHandler";
-import {AppDispatch} from "../../store/store";
+import {AppDispatch} from "@/store/store";
 import {useDispatch} from "react-redux";
-import {userSlice} from "../../store/reducers/user-reducer.slice";
+import {userSlice} from "@/store/reducers/user-reducer.slice";
 
 export const useFetchCategories = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -18,7 +18,7 @@ export const useFetchCategories = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getCategories();
+        const response = await api.getCategories();
         setCategories(response.data);
         setIsLoading(false);
 

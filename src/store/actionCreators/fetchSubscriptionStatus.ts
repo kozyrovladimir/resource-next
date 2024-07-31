@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { axiosErrorHandler } from '../../utils/helpers/axiosErrorHandler';
+import { axiosErrorHandler } from '@/utils/helpers/axiosErrorHandler';
 
-import { SubscriptionStatus } from '../../models/SubscriptionStatus';
+import { SubscriptionStatus } from '@/models/SubscriptionStatus';
 import { userSlice } from '../reducers/user-reducer.slice';
-import {getSubscriptionStatus} from "../../api/api";
+import {api} from '@/shared';
 
 export const fetchSubscriptionStatus = createAsyncThunk<
   SubscriptionStatus,
@@ -16,7 +16,7 @@ export const fetchSubscriptionStatus = createAsyncThunk<
     const { setUser } = userSlice.actions;
 
     try {
-      const response = await getSubscriptionStatus();
+      const response = await api.getSubscriptionStatus();
       const subscriptionStatus = response.data;
       const authorized = response.headers.authorized;
 

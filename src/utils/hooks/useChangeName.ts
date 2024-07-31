@@ -5,9 +5,9 @@ import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
 
-import * as api from '../../api/api';
-import { UserDataI } from '../../models/UserData';
-import { setUserData } from '../../store/reducers/user-data.slice';
+import {api} from '@/shared';
+import { UserDataI } from '@/models/UserData';
+import { setUserData } from '@/store/reducers/user-data.slice';
 
 export function useChangeName(userData: UserDataI): {
   formik: any;

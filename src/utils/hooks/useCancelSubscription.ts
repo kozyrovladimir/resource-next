@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { axiosErrorHandler } from '../helpers/axiosErrorHandler';
 
-import * as api from '../../api/api';
+import {api} from '@/shared';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../store/store';
-import { fetchSubscriptionStatus } from '../../store/actionCreators/fetchSubscriptionStatus';
+import { AppDispatch } from '@/store/store';
+import { fetchSubscriptionStatus } from '@/store/actionCreators/fetchSubscriptionStatus';
 
 interface IUseCancelSubscription {
   pending: boolean;

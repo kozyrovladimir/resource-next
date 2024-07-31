@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getUserAccess} from "../../api/api";
+import {api} from '@/shared';
 
 //no check authorisation
 export const useGetUserAccess = () => {
@@ -10,7 +10,7 @@ export const useGetUserAccess = () => {
     const getUserAccessFunc = async () => {
       try {
         setIsLoading(true);
-        const response = await getUserAccess();
+        const response = await api.getUserAccess();
         setUserAccess(response.data.access);
         setIsLoading(false);
       } catch (error: any) {

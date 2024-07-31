@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AxiosError } from 'axios';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import {applyDiscount} from "@/api/api";
+import {api} from '@/shared';
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "@/store/store";
 import {setDiscount} from "@/store/reducers/discount.slice";
@@ -30,7 +30,7 @@ export function useAddDiscount(period: string) {
       setErrorMessage(undefined);
       const castedValues = validationSchema.cast(values);
       setPending(true);
-      applyDiscount(castedValues.discount, period)
+      api.applyDiscount(castedValues.discount, period)
         .then((response) => {
           setSuccessMessage(response.data.message)
           dispatch(setDiscount({discountCode: castedValues.discount, message: response.data.message, payment_required: response.data.payment_required}))

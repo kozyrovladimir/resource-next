@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useState} from 'react';
-import {successTeacherTrainingCoursePayment} from "../../api/api";
+import {api} from '@/shared';
 import {axiosErrorHandler} from "../helpers/axiosErrorHandler";
 
 export const useSuccessTeacherTrainingCoursePayment = () => {
@@ -9,7 +9,7 @@ export const useSuccessTeacherTrainingCoursePayment = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await successTeacherTrainingCoursePayment();
+        await api.successTeacherTrainingCoursePayment();
         setIsLoading(false);
       } catch (error) {
         // @ts-ignore

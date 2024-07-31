@@ -4,11 +4,11 @@ import {useFormik} from 'formik';
 import {useDispatch} from 'react-redux';
 import * as yup from 'yup';
 
-import * as api from '../../api/api';
-import {userSlice} from '../../store/reducers/user-reducer.slice';
-import {fetchUserData} from "../../store/actionCreators/fetchUserData";
-import {AppDispatch} from "../../store/store";
-import {UseLoginFormI} from "../../models/LogInForm";
+import {api} from '@/shared';
+import {userSlice} from '@/store/reducers/user-reducer.slice';
+import {fetchUserData} from "@/store/actionCreators/fetchUserData";
+import {AppDispatch} from "@/store/store";
+import {UseLoginFormI} from "@/models/LogInForm";
 
 export function useLoginForm(successFunction?: () => void): UseLoginFormI {
   const dispatch = useDispatch<AppDispatch>();

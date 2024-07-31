@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import {forgotPassword} from "../../api/api";
+import {api} from '@/shared';
 import {AxiosError} from "axios";
 
 export function useForgotPassword(): any {
@@ -27,7 +27,7 @@ export function useForgotPassword(): any {
     onSubmit: values => {
       const castedValues = validationSchema.cast(values);
       setPending(true);
-      const passwordRecoveryRequest = forgotPassword(castedValues.email);
+      const passwordRecoveryRequest = api.forgotPassword(castedValues.email);
 
       passwordRecoveryRequest.then(value => {
         setSuccessMessage('We have sent you an email with further instructions. Please check your email.');

@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import * as api from '../../api/api';
+import {api} from '@/shared';
 import { userSlice } from '../reducers/user-reducer.slice';
-import { axiosErrorHandler } from '../../utils/helpers/axiosErrorHandler';
-import {StripePaymentInfoI} from "../../models/StripePaymentInfo";
+import { axiosErrorHandler } from '@/utils/helpers/axiosErrorHandler';
+import {StripePaymentInfoI} from "@/models/StripePaymentInfo";
 
 export const fetchStripePaymentDetails = createAsyncThunk<
   StripePaymentInfoI,

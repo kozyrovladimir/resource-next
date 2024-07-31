@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useState} from 'react';
-import {newPurchase} from "@/api/api";
+import {api} from '@/shared';
 import {axiosErrorHandler} from "../helpers/axiosErrorHandler";
 import {PurchaseInfo} from "@/models/PurchaseInfo";
 import {useDispatch} from "react-redux";
@@ -25,7 +25,7 @@ export const useSuccessPayment = (purchaseInfo: PurchaseInfo) => {
       }
 
       try {
-        await newPurchase(purchaseInfo);
+        await api.newPurchase(purchaseInfo);
         setIsLoading(false);
         dispatch(fetchUserData());
         dispatch(clearSuccessPayment());

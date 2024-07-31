@@ -2,9 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { userSlice } from '../reducers/user-reducer.slice';
 
-import * as api from '../../api/api';
-import { UserDataI } from '../../models/UserData';
-import { axiosErrorHandler } from '../../utils/helpers/axiosErrorHandler';
+import {api} from '@/shared';
+import { UserDataI } from '@/models/UserData';
+import { axiosErrorHandler } from '@/utils/helpers/axiosErrorHandler';
 
 export const fetchUserData = createAsyncThunk<
   UserDataI,
@@ -20,11 +20,8 @@ export const fetchUserData = createAsyncThunk<
 
     if (authorized === 'false') {
       dispatch(setUser(false));
-      // localStorage.removeItem('token');
-      // console.log('unauthorized');
     } else {
       dispatch(setUser(true));
-      // console.log('authorized');
     }
 
     return userData;

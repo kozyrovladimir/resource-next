@@ -3,12 +3,12 @@ import {SetStateAction, useState} from 'react';
 import {useFormik} from 'formik';
 import * as yup from 'yup';
 
-import * as api from '../../api/api';
+import {api} from '@/shared';
 import {useDispatch} from "react-redux";
 import {userSlice} from "@/store/reducers/user-reducer.slice";
 import {fetchUserData} from "@/store/actionCreators/fetchUserData";
 import {AppDispatch} from "@/store/store";
-import {SignUpFormI} from "../../models/SignUpForm";
+import {SignUpFormI} from "@/models/SignUpForm";
 
 export function useSignUpForm(successFunction?: () => void): SignUpFormI {
   const [pending, setPending] = useState<boolean>(false);
