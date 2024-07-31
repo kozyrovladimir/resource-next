@@ -44,4 +44,4 @@ const Select: React.FC<SelectProps> = ({placeholder, items}) => {
   );
 };
 
-export default Select;
+export {Select};
