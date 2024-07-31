@@ -3,7 +3,7 @@
 import React, {PropsWithChildren} from 'react';
 import {store} from "@/store/store";
 import {Provider} from "react-redux";
-import {theme} from "@/constants/appTheme";
+import {theme} from "@/shared";
 import {ThemeProvider} from "@mui/material";
 
 const Providers: React.FC<PropsWithChildren> = ({children}) => {

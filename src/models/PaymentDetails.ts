@@ -1,4 +1,4 @@
-import {Products} from "../constants/Products";
+import {Products} from "@/shared";
 
 export type ProductType = typeof Products.module1;
 

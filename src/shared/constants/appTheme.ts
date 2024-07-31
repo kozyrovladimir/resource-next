@@ -1,7 +1,5 @@
 import { createTheme } from '@mui/material';
 
-// TODO: need to create and integrate correct theme
-
 export const theme = createTheme({
   palette: {
     success: {
