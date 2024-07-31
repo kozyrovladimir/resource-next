@@ -5,7 +5,7 @@ import styles from './CookieConsent.module.scss';
 import { Typography } from '@mui/material';
 import Cookies from 'js-cookie';
 import Link from "next/link";
-import { Button } from "@/components/ui_kit";
+import { Button } from "@/shared";
 import { usePathname } from 'next/navigation';
 
 const CookieConsent = () => {

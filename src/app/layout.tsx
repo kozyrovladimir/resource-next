@@ -1,14 +1,14 @@
 import type {Metadata} from "next";
 import styles from "./layout.module.scss";
 import React from "react";
-import '@/components/ui_kit/styles/index.scss';
+import '@/shared/styles/index.scss';
 import Providers from "@/components/Providers/Providers";
 import InitLogic from "@/components/InitLogic/InitLogic";
 import { GoogleTagManager } from '@next/third-parties/google';
 import CookieConsent from "@/components/CookieConsent/CookieConsent";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import {Header} from "@/widgets/heder";
 import NextTopLoader from 'nextjs-toploader';
+import {Footer} from "@/widgets/footer";
 
 
 export const metadata: Metadata = {

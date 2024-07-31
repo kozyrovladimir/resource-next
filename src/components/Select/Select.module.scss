@@ -1,0 +1,57 @@
+.trigger {
+  border: 1px solid var(--color-main-grey-dark);
+  border-radius: 6px;
+  background-color: inherit;
+  padding: 12px 12px 12px 16px;
+  color: var(--color-main-grey-dark);
+  min-width: 160px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid var(--color-main-black);
+  }
+}
+
+.label {
+  color: var(--color-main-grey-dark);
+  font-size: 16px;
+}
+
+
+.value {
+  //border: 1px solid green;
+}
+
+.icon {
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.content {
+  border: 1px solid var(--color-main-grey-dark);
+  border-radius: 6px;
+  background-color: inherit;
+  min-width: 160px;
+  overflow: hidden;
+}
+
+.item {
+  padding: 16px;
+  line-height: 100%;
+  color: var(--color-main-grey-dark);
+
+  &:hover {
+    background-color: var(--color-main-grey-light);
+    outline: none;
+  }
+
+  &:focus {
+    background-color: var(--color-main-grey-light);
+    outline: none;
+  }
+}

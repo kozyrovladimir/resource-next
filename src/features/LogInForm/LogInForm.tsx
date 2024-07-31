@@ -4,7 +4,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 
-import {useIsAuthorised} from '../../utils/hooks/useIsAuthorised';
+import {useIsAuthorised} from '@/utils/hooks/useIsAuthorised';
 
 import {
   FormButton,
@@ -12,9 +12,9 @@ import {
   FormSubtitle,
   FormTitle,
   FormInputsStack, FormDivider
-} from "../form_components";
-import Input from "../ui_kit/components/input";
-import {UseLoginFormI} from "../../models/LogInForm";
+} from "@/entities/form-conponents";
+import {Input} from "@/shared";
+import {UseLoginFormI} from "@/models/LogInForm";
 
 interface State {
   showPassword: boolean;

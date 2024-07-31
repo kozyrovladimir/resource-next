@@ -3,7 +3,6 @@
 import React from 'react';
 import styles from './UserStatus.module.scss';
 import MenuItemWithSubmenu from "../MenuItemWithSubmenu/MenuItemWithSubmenu";
-import {useFetchUserData} from "@/utils/hooks/useFetchUserData";
 import {useIsAuthorised} from "@/utils/hooks/useIsAuthorised";
 import PersonIcon from '@mui/icons-material/Person';
 import MobileMenuItem from "../MobileMenuItem/MobileMenuItem";
@@ -11,13 +10,12 @@ import MobileMenuItemWithSubmenu
   from "../MobileMenuItemWithSubmenu/MobileMenuItemWithSubmenu";
 import {useLogout} from "@/utils/hooks/useLogout";
 import {LiaAngleDownSolid} from "react-icons/lia";
-import UserDialog from "../../../UserDialog/UserDialog";
-import LogInForm from "../../../LogInForm/LogInForm";
+import {UserDialog} from "@/shared";
+import LogInForm from "@/features/LogInForm/LogInForm";
 import {useLoginForm} from "@/utils/hooks/useLoginForm";
-import SignUpForm from "../../../SignUpForm/SignUpForm";
+import SignUpForm from "@/features/SignUpForm/SignUpForm";
 import {useSignUpForm} from "@/utils/hooks/useSignUpForm";
-import {FormLink, FormLinksWrapper, FormUnderlineText} from "../../../form_components";
-import {reloadPage} from "@/utils/helpers/reloadPage";
+import {FormLink, FormLinksWrapper, FormUnderlineText} from "@/entities/form-conponents";
 import Link from 'next/link';
 import {usePathname, useRouter} from "next/navigation";
 import {useGetUserData} from "@/utils/hooks/useGetUserData";
@@ -38,7 +36,7 @@ export const Menu: React.FC = () => {
 }
 
 export const LinkToLogin: React.FC = () => {
-  const { isLoading} = useGetUserData();
+  const {isLoading} = useGetUserData();
   const [open, setOpen] = React.useState(false);
   const [isLoginForm, setIsLoginForm] = React.useState(true);
 

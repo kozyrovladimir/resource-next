@@ -16,7 +16,7 @@ export type InputProps = {
   value?: string;
 } & ComponentProps<'input'>;
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       className,
@@ -98,7 +98,5 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
-
-export default Input;
 
 Input.displayName = 'Input';

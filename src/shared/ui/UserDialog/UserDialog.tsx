@@ -50,7 +50,11 @@ const UserDialog: React.FC<UserDialogProps> = ({
         </Box>
         <Box mb={2}> {/*dont remove mb*/}
           {text && <Typography fontSize={{xs: 14, sm: 16}}
-                               sx={{color: 'var(--color-text-grey-dark)', paddingBottom: '5px', paddingTop: '5px'}}
+                               sx={{
+                                 color: 'var(--color-text-grey-dark)',
+                                 paddingBottom: '5px',
+                                 paddingTop: '5px'
+                               }}
                                align={'center'}>{text}</Typography>}
         </Box>
         <Box sx={{margin: '0 auto'}}>
@@ -61,4 +65,4 @@ const UserDialog: React.FC<UserDialogProps> = ({
   );
 };
 
-export default UserDialog;
+export {UserDialog};

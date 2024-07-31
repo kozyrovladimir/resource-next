@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from "../../ui_kit";
+import {Button} from "@/shared";
 
 
 interface FormButtonType {

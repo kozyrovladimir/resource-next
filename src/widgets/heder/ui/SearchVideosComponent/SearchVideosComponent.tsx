@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
-import { Search } from '../../../ui_kit';
-import { VscClose } from 'react-icons/vsc';
-import Input from '../../../ui_kit/components/input';
+import React, {useState, useRef, useEffect} from 'react';
+import {Search} from '@/shared';
+import {VscClose} from 'react-icons/vsc';
+import {Input} from '@/shared';
 import styles from './SearchVideosComponent.module.scss';
-import {useRouter, useSearchParams} from "next/navigation";
+import {useRouter} from "next/navigation";
 
 const SearchVideosComponent = () => {
   const router = useRouter();
@@ -49,7 +49,7 @@ const SearchVideosComponent = () => {
   return (
     <>
       <span className={styles.slash}>/</span>
-      <Search style={{ bottom: '-0.25rem', position: 'relative' }} onClick={handleClick} />
+      <Search style={{bottom: '-0.25rem', position: 'relative'}} onClick={handleClick}/>
       {isInputVisible && (
         <div>
           <Input
@@ -60,7 +60,7 @@ const SearchVideosComponent = () => {
             ref={inputRef}
             autoFocus={true}
             onBlur={handleBlur}
-            style={{ padding: '0.2rem 0.5rem', marginLeft: '0.5rem' }}
+            style={{padding: '0.2rem 0.5rem', marginLeft: '0.5rem'}}
             iconEnd={
               <VscClose
                 style={{cursor: 'pointer', position: "relative", top: '0.1rem'}}

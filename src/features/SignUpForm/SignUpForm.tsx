@@ -11,8 +11,8 @@ import {
   FormSubtitle,
   FormTitle,
   FormDivider,
-} from "../form_components";
-import Input from "../ui_kit/components/input";
+} from "@/entities/form-conponents";
+import {Input} from "@/shared";
 import {SignUpFormI} from "@/models/SignUpForm";
 
 interface SignUpFormProps {

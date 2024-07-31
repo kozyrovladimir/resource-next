@@ -4,7 +4,7 @@ import React, {useState, useRef} from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import styles from './MobileSearchVideosComponent.module.scss';
 import {VscClose} from "react-icons/vsc";
-import Input from "../../../ui_kit/components/input";
+import {Input} from "@/shared";
 import {useRouter} from "next/navigation";
 
 const MobileSearchVideosComponent = () => {
@@ -19,7 +19,7 @@ const MobileSearchVideosComponent = () => {
   const handleEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       event.currentTarget.blur();
-      router.push( '/search-videos?search=' + searchValue);
+      router.push('/search-videos?search=' + searchValue);
     }
   };
 
