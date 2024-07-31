@@ -8,12 +8,24 @@ const SearchPanel: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Input/>
-      <Select placeholder={'Phase'} items={mockItems}/>
-      <Select placeholder={'Season'} items={mockItems}/>
-      <Select placeholder={'Element'} items={mockItems}/>
-      <Select placeholder={'Organ'} items={mockItems}/>
-      <Select placeholder={'Dantian'} items={mockItems}/>
+      <div className={styles.search}>
+        <Input/>
+      </div>
+      <div className={styles.select1}>
+        <Select placeholder={'Phase'} items={mockItems}/>
+      </div>
+      <div className={styles.select2}>
+        <Select placeholder={'Season'} items={mockItems}/>
+      </div>
+      <div className={styles.select3}>
+        <Select placeholder={'Element'} items={mockItems}/>
+      </div>
+      <div className={styles.select4}>
+        <Select placeholder={'Organ'} items={mockItems}/>
+      </div>
+      <div className={styles.select5}>
+        <Select placeholder={'Dantian'} items={mockItems}/>
+      </div>
     </div>
   );
 };

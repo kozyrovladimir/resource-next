@@ -2,4 +2,56 @@
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 3fr repeat(5, 2fr);
+  grid-template-areas:
+        "search select1 select2 select3 select4 select5";
+
+  @media screen and (max-width: 1366px) {
+    grid-gap: 12px;
+  }
+
+  @media screen and (max-width: 960px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "search search search"
+      "select1 select2 select3"
+      "select4 select5 auto";
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "search search"
+        "select1 select2"
+        "select3 select4"
+        "select5 auto";
+  }
+
+
 }
+
+.search {
+  grid-area: search;
+}
+
+.select1 {
+  grid-area: select1;
+}
+
+.select2 {
+  grid-area: select2;
+}
+
+.select3 {
+  grid-area: select3;
+}
+
+.select4 {
+  grid-area: select4;
+}
+
+.select5 {
+  grid-area: select5;
+}
+

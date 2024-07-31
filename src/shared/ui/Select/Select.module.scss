@@ -1,25 +1,38 @@
 .trigger {
-  border: 1px solid var(--color-main-grey-dark);
-  border-radius: 6px;
-  background-color: inherit;
-  padding: 12px 12px 12px 16px;
-  color: var(--color-main-grey-dark);
-  min-width: 160px;
+  min-width: 120px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  //padding: calc(0.6rem - 1px) 1.25rem;
+  padding: 0.56rem 1rem;
+
+  font-size: 1rem;
+  color: var(--color-text-grey-dark);
+  caret-color: var(--color-main-yellow);
+
+  background-color: var(--color-main-white);
+  border: 1px solid var(--color-border-grey);
+  border-radius: 0.375rem;
+  letter-spacing: 0.005rem;
+  outline: none;
 
   &:focus {
     outline: none;
     border: 1px solid var(--color-main-black);
   }
+
+  @media screen and (max-width: 480px) {
+    padding: 0.38rem 1rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.005rem;
+    border-radius: 0.33rem;
+  }
 }
 
 .label {
-  color: var(--color-main-grey-dark);
-  font-size: 16px;
+
 }
 
 
@@ -35,15 +48,15 @@
 .content {
   border: 1px solid var(--color-main-grey-dark);
   border-radius: 6px;
-  background-color: inherit;
-  min-width: 160px;
+  background-color: var(--color-main-white);
+  min-width: 120px;
   overflow: hidden;
 }
 
 .item {
   padding: 16px;
   line-height: 100%;
-  color: var(--color-main-grey-dark);
+  color: var(--color-text-grey-dark);
 
   &:hover {
     background-color: var(--color-main-grey-light);
