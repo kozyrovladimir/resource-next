@@ -3,6 +3,8 @@
 import React from 'react';
 import {useFetchVideos} from "@/utils/hooks/useFetchVideos";
 import VideoCard from "@/features/VideoCard/ui/VideoCard";
+import VideoCategoryGridContainer
+  from "@/shared/ui/VideoCategoryGridContainer/VideoCategoryGridContainer";
 
 const VideoList = () => {
   const {videoList, isLoading, error} = useFetchVideos();
@@ -16,16 +18,17 @@ const VideoList = () => {
   }
 
   return (
-    <div>
+    <VideoCategoryGridContainer>
       {
-        videoList.map((video, index) => {
+        videoList.map((video) => {
           return (
             <VideoCard
+              key={video.id}
               video={video}
             />
           )
         })}
-    </div>
+    </VideoCategoryGridContainer>
   );
 };
 
