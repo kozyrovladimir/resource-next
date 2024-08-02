@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {VideoListItemI} from '../../models/VideoListItem';
-import { fetchVideoListAPI } from '../../store/actionCreators/fetchVideoListAPI';
-import { FetchVideosI } from '../../store/reducers/video-list-api.slice';
-import { AppDispatch, AppRootStateType } from '../../store/store';
+import { fetchVideoListAPI } from '@/store/actionCreators/fetchVideoListAPI';
+import { FetchVideosI } from '@/store/reducers/video-list-api.slice';
+import { AppDispatch, AppRootStateType } from '@/store/store';
+import {VideoListItemI} from "@/shared/models";
 
 export const useFetchVideos = (): FetchVideosI => {
   const { videoList, isLoading, error } = useSelector<

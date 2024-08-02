@@ -1,7 +1,7 @@
-import {VideoListItemI} from "../../models/VideoListItem";
 import {FetchVideosI} from "./video-list-api.slice";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {fetchFavoriteVideoListAPI} from "../actionCreators/fetchFavoriteVideoListAPI";
+import {VideoListItemI} from "@/shared/models";
 
 export interface FetchFavoriteVideosI {
   videoList: VideoListItemI[];

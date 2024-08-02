@@ -16,3 +16,7 @@ export type {
   PhaseT,
   SeasonT
 } from './SearchOptions';
+
+export type {VideoListItemAPI, VideoListItemI} from './VideoListItem';
+
+export type {VideoDetailsI, VideoDetailAPIT} from './VideoDetails';

@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, AppRootStateType } from "@/store/store";
-import { VideoListItemI } from "@/models/VideoListItem";
 import { fetchFavoriteVideoListAPI } from "@/store/actionCreators/fetchFavoriteVideoListAPI";
 import { usePathname } from "next/navigation";
+import {VideoListItemI} from "@/shared/models";
 
 export const useFetchFavoriteVideos = () => {
   const pathname = usePathname();

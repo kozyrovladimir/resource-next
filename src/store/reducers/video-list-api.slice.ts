@@ -1,8 +1,9 @@
 // eslint-disable-next-line import/named
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import {VideoListItemI} from '../../models/VideoListItem';
+
 import { fetchVideoListAPI } from '../actionCreators/fetchVideoListAPI';
+import {VideoListItemI} from "@/shared/models";
 
 export interface FetchVideosI {
   videoList: VideoListItemI[];

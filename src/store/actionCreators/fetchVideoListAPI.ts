@@ -3,8 +3,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { axiosErrorHandler } from '@/utils/helpers/axiosErrorHandler';
 
 import {api} from '@/shared';
-import {VideoListItemI} from '@/models/VideoListItem';
 import { userSlice } from '../reducers/user-reducer.slice';
+import {VideoListItemI} from "@/shared/models";
 
 export const fetchVideoListAPI = createAsyncThunk<
   VideoListItemI[],

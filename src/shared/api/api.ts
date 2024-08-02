@@ -1,36 +1,40 @@
 import axios, {type AxiosResponse} from 'axios';
-import {VideoDetailsI} from "@/models/VideoDetails";
-import {Category} from "@/models/Category";
 import {StripePaymentInfoI} from "@/models/StripePaymentInfo";
 import {SubscriptionStatus} from "@/models/SubscriptionStatus";
-import {VideoListItemI} from "@/models/VideoListItem";
+import {VideoDetailsI, VideoListItemI} from "@/shared/models";
 import {DiscountInfoI} from "@/store/reducers/discount.slice";
 import {NewStripeSubscrResI} from "@/models/NewStripeSubscription";
 import {PurchaseInfo} from "@/models/PurchaseInfo";
 import {PurchaseHistoryItem} from "@/models/PurchaseHistory";
 
-const projectID = 2; // This is the project ID for UNIVERSITY
+const projectID = 3; // This is the project ID for UNIVERSITY
 
 const instance = axios.create({
-  baseURL: '/api',
-  withCredentials: true,
+  baseURL: 'https://yoqiresource.org/',
+  // withCredentials: true,
   headers: {
-    'Cache-Control': 'max-age=3600'
+    'Cache-Control': 'max-age=3600',
   }
 });
 
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc5MzE2NzQ1LCJleHAiOjE2Nzk2NzY3NDV9.85gMA0cJHwQORnEva9nXbnUh7eiG1OMNipNdoM8p_7I';
+
+instance.interceptors.request.use((config) => {
+    config.headers['Authorization'] = `Bearer ${token}`;
+    return config;
+  }
+);
+
 export const getVideos = async (): Promise<AxiosResponse<VideoListItemI[]>> => {
-  return await instance.get<VideoListItemI[]>('courses/1/videos');
+  console.log('getVideos');
+  return await instance.get<VideoListItemI[]>('videos');
 };
 export const getVideo = async (
   videoID: string,
 ): Promise<AxiosResponse<VideoDetailsI>> => {
-  return await instance.get<any>(`courses/1/videos/${videoID}`);
+  return await instance.get<any>(`videos/${videoID}`);
 };
 
-export const getCategories = async (): Promise<AxiosResponse<Category[]>> => {
-  return await instance.get<Category[]>('courses/1/get_categories');
-}
 export const login = async (
   email: string,
   password: string,

@@ -1,23 +1,41 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 import { fetchVideoDetailsAPI } from '../actionCreators/fetchVideoDetails';
-
-import {
-  VideoDetailAPIT,
-  VideoDetailsWithSubscriptionStatusI
-} from '../../models/VideoDetails';
+import {VideoDetailAPIT, VideoDetailsI} from "@/shared/models";
 
 const videoDetailInitialSate: VideoDetailAPIT = {
   isLoading: false,
   error: '',
-  videoDetail: {} as VideoDetailsWithSubscriptionStatusI,
+  videoDetail: {
+    id: 1,
+    title: 'TT ATTUNE- Earth  Purification',
+    phase: 'Purge',
+    season: 'Late Summer',
+    organ: 'Spleen',
+    element: 'Earth',
+    dantian: 'Upper',
+    meridian: 'Stomach',
+    description: 'Description for Earth purification Video',
+    benefits: 'This will help you to enhance all your strength',
+    flowvariations: 'Do in the best way paossible',
+    tipstopro: 'Do your best and you will get result',
+    link: 'https://kinescope.io/201442647',
+    sideview: 'https://kinescope.io/201442647',
+    variations: 'https://kinescope.io/201442647',
+    thumbnail: null,
+    createdAt: null,
+    updatedAt: null,
+    video_refs: [],
+    add_corresponds: [],
+    is_favorite: false,
+  },
 };
 
 const videoDetailSlice = createSlice({
   name: 'video',
   initialState: videoDetailInitialSate,
   reducers: {
-    setVideoDetail(state = videoDetailInitialSate, action: PayloadAction<VideoDetailsWithSubscriptionStatusI>) {
+    setVideoDetail(state = videoDetailInitialSate, action: PayloadAction<VideoDetailsI>) {
       state.videoDetail = action.payload;
     },
     setVideoIsLoading(state = videoDetailInitialSate, action: PayloadAction<boolean>) {
