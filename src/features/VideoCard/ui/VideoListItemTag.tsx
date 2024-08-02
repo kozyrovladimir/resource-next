@@ -1,6 +1,5 @@
 import React from 'react';
-
-import {Typography} from '@mui/material';
+import styles from './VideoListItemTag.module.scss';
 
 interface VideoListItemTagType {
   color: string;
@@ -14,22 +13,9 @@ const VideoListItemTag: React.FC<VideoListItemTagType> = ({
                                                             onClick,
                                                           }) => {
   return (
-    <Typography
-      onClick={onClick}
-      sx={{
-        fontFamily: 'Arial',
-        letterSpacing: '0.25px',
-        ':first-letter': {textTransform: 'uppercase'},
-        ':hover': {cursor: 'pointer'},
-        mr: 3,
-        textDecoration: 'underline',
-        color,
-      }}
-      gutterBottom
-      component="div"
-    >
+    <button style={{borderColor: `${color}`}} className={styles.tag} onClick={onClick}>
       {children}
-    </Typography>
+    </button>
   );
 };
 
