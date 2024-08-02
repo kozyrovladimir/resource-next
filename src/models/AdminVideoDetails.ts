@@ -11,7 +11,7 @@ import {
   SearchOptions,
   Season,
   SeasonT,
-} from './SearchOptions';
+} from '@/shared/models';
 
 export interface AdminVideoDetails {
   thumbnail: File;
