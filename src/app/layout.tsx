@@ -5,7 +5,7 @@ import '@/shared/styles/index.scss';
 import Providers from "@/components/Providers/Providers";
 import InitLogic from "@/components/InitLogic/InitLogic";
 import { GoogleTagManager } from '@next/third-parties/google';
-import CookieConsent from "@/components/CookieConsent/CookieConsent";
+import {CookieConsent} from "@/features/CookieConsent/CookieConsent";
 import {Header} from "@/widgets/heder";
 import NextTopLoader from 'nextjs-toploader';
 import {Footer} from "@/widgets/footer";

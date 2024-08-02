@@ -28,7 +28,7 @@ export const useHandleFavourites = (id: number, initialIsFavourite: boolean) => 
         .then(() => {
           setIsFavourite(false);
           // additional logic
-          if (path.includes('favourites')) {
+          if (path?.includes('favourites')) {
             dispatch(deleteFavoriteVideoListAPI({videoId: id}));
             router.push(`/videos/favourites`)
           }

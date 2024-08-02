@@ -52,4 +52,4 @@ const CookieConsent = () => {
   );
 };
 
-export default CookieConsent;
+export {CookieConsent};
