@@ -4,18 +4,26 @@ import * as SelectRadix from '@radix-ui/react-select';
 import React from 'react';
 import {VscChevronDown} from "react-icons/vsc";
 import styles from './Select.module.scss';
+import {useSearchParams} from "next/navigation";
 
 type SelectProps = {
   placeholder: string;
   items: string[];
-  // onValueChange: (value: string) => void;
+  selectKey: string;
+  onValueChange: (value: string) => void;
 }
 
-const Select: React.FC<SelectProps> = ({placeholder, items}) => {
+const Select: React.FC<SelectProps> = ({placeholder, items, onValueChange, selectKey}) => {
 
-  const onValueChange = (value: string) => {
-    console.log(value);
-  }
+  const searchParams = useSearchParams();
+  const selectedValue = searchParams?.get(selectKey);
+
+  React.useEffect(() => {
+    if (selectedValue && items.includes(selectedValue)) {
+      onValueChange(selectedValue);
+    }
+  }, [selectedValue]);
+
 
   return (
     <SelectRadix.Root onValueChange={onValueChange}>
