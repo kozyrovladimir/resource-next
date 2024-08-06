@@ -10,7 +10,7 @@ import {PurchaseHistoryItem} from "@/models/PurchaseHistory";
 const projectID = 3; // This is the project ID for UNIVERSITY
 
 const instance = axios.create({
-  baseURL: 'https://yoqiresource.org/',
+  baseURL: 'https://videos.yoqi-test.com/api/',
   // withCredentials: true,
   headers: {
     'Cache-Control': 'max-age=3600',
@@ -27,12 +27,12 @@ instance.interceptors.request.use((config) => {
 
 export const getVideos = async (): Promise<AxiosResponse<VideoListItemI[]>> => {
   console.log('getVideos');
-  return await instance.get<VideoListItemI[]>('videos');
+  return await instance.get<VideoListItemI[]>('movements');
 };
 export const getVideo = async (
   videoID: string,
 ): Promise<AxiosResponse<VideoDetailsI>> => {
-  return await instance.get<any>(`videos/${videoID}`);
+  return await instance.get<any>(`movements/${videoID}`);
 };
 
 export const login = async (

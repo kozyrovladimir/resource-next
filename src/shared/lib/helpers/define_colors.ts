@@ -4,17 +4,17 @@ import { ElementT, OrganT, PhaseT, SearchOptions, SeasonT } from '../../models';
 
 export function definePhaseColor(phase: PhaseT | undefined): string {
   switch (phase) {
-    case 'Attune':
+    case 'attune':
       return Colors.orange;
-    case 'Purge':
+    case 'purge':
       return Colors.gray;
-    case 'Tonify':
+    case 'tonify':
       return Colors.blue;
-    case 'Grow':
+    case 'grow':
       return Colors.green;
-    case 'Circulate':
+    case 'circulate':
       return Colors.red;
-    case 'Integrate':
+    case 'integrate':
       return Colors.pink;
     default:
       return Colors.defaultColor;
@@ -23,15 +23,15 @@ export function definePhaseColor(phase: PhaseT | undefined): string {
 
 export function defineElementColor(element: ElementT | undefined): string {
   switch (element) {
-    case 'Earth':
+    case 'earth':
       return Colors.orange;
-    case 'Metal':
+    case 'metal':
       return Colors.gray;
-    case 'Water':
+    case 'water':
       return Colors.blue;
-    case 'Wood':
+    case 'wood':
       return Colors.green;
-    case 'Fire':
+    case 'fire':
       return Colors.red;
     default:
       return Colors.defaultColor;
@@ -40,15 +40,15 @@ export function defineElementColor(element: ElementT | undefined): string {
 
 export function defineSeasonColor(element: SeasonT | undefined): string {
   switch (element) {
-    case 'Late Summer':
+    case 'late summer':
       return Colors.orange;
-    case 'Autumn':
+    case 'autumn':
       return Colors.gray;
-    case 'Winter':
+    case 'winter':
       return Colors.blue;
-    case 'Spring':
+    case 'spring':
       return Colors.green;
-    case 'Summer':
+    case 'summer':
       return Colors.red;
     default:
       return Colors.defaultColor;
@@ -57,25 +57,25 @@ export function defineSeasonColor(element: SeasonT | undefined): string {
 
 export function defineOrganColor(element: OrganT | undefined): string {
   switch (element) {
-    case 'Spleen':
+    case 'spleen':
       return Colors.orange;
-    case 'Lungs':
+    case 'lungs':
       return Colors.gray;
-    case 'Kidneys':
+    case 'kidneys':
       return Colors.blue;
-    case 'Liver':
+    case 'liver':
       return Colors.green;
-    case 'Heart':
+    case 'heart':
       return Colors.red;
-    case 'Small Intestine':
+    case 'small intestine':
       return Colors.red;
-    case 'Stomach':
+    case 'stomach':
       return Colors.orange;
-    case 'Large Intestine':
+    case 'large intestine':
       return Colors.gray;
-    case 'Bladder':
+    case 'bladder':
       return Colors.blue;
-    case 'Gall Bladder':
+    case 'gall bladder':
       return Colors.green;
     default:
       return Colors.defaultColor;
@@ -89,13 +89,13 @@ export function defineDefaultColor(element: string | undefined): string {
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const defineColorGenerator = (item: SearchOptions) => {
   switch (item) {
-    case SearchOptions.Phase:
+    case SearchOptions.phase:
       return definePhaseColor;
-    case SearchOptions.Season:
+    case SearchOptions.season:
       return defineSeasonColor;
-    case SearchOptions.Element:
+    case SearchOptions.element:
       return defineElementColor;
-    case SearchOptions.Organ:
+    case SearchOptions.organ:
       return defineOrganColor;
     default:
       return defineDefaultColor;

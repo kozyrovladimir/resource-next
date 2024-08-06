@@ -1,103 +1,103 @@
 export enum SearchOptions {
-  Phase = 'Phase',
-  Season = 'Season',
-  Element = 'Element',
-  Organ = 'Organ',
-  Dantain = 'Dantain',
+  phase = 'phase',
+  season = 'peason',
+  element = 'element',
+  organ = 'organ',
+  dantain = 'dantain',
 }
 
-export type PhaseT = 'Attune' | 'Purge' | 'Tonify' | 'Grow' | 'Circulate' | 'Integrate';
+export type PhaseT = 'attune' | 'purge' | 'tonify' | 'grow' | 'circulate' | 'integrate';
 export enum Phase {
-  Attune = 'Attune',
-  Purge = 'Purge',
-  Tonify = 'Tonify',
-  Grow = 'Grow',
-  Circulate = 'Circulate',
-  Integrate = 'Integrate',
+  attune = 'attune',
+  purge = 'purge',
+  tonify = 'tonify',
+  grow = 'grow',
+  circulate = 'circulate',
+  integrate = 'integrate',
 }
 
-export type SeasonT = 'Spring' | 'Summer' | 'Late Summer' | 'Autumn' | 'Winter';
+export type SeasonT = 'spring' | 'summer' | 'late summer' | 'autumn' | 'winter';
 
 export enum Season {
-  Spring = 'Spring',
-  Summer = 'Summer',
-  LateSummer = 'Late Summer',
-  Autumn = 'Autumn',
-  Winter = 'Winter',
+  spring = 'spring',
+  summer = 'summer',
+  lateSummer = 'late summer',
+  autumn = 'autumn',
+  winter = 'winter',
 }
 
-export type ElementT = 'Earth' | 'Metal' | 'Water' | 'Wood' | 'Fire';
+export type ElementT = 'earth' | 'metal' | 'water' | 'wood' | 'fire';
 
 export enum Element {
-  Earth = 'Earth',
-  Metal = 'Metal',
-  Water = 'Water',
-  Wood = 'Wood',
-  Fire = 'Fire',
+  earth = 'earth',
+  metal = 'metal',
+  water = 'water',
+  wood = 'wood',
+  fire = 'fire',
 }
 
-export type DantainT = 'Upper' | 'Lower' | 'Middle';
+export type DantainT = 'upper' | 'lower' | 'middle';
 
 export enum Dantain {
-  Upper = 'Upper',
-  Lower = 'Lower',
-  Middle = 'Middle',
+  upper = 'upper',
+  lower = 'lower',
+  middle = 'middle',
 }
 
 export type OrganT =
-  | 'Heart'
-  | 'Small Intestine'
-  | 'Spleen'
-  | 'Stomach'
-  | 'Lungs'
-  | 'Large Intestine'
-  | 'Kidneys'
-  | 'Bladder'
-  | 'Liver'
-  | 'Gall Bladder';
+  | 'heart'
+  | 'small intestine'
+  | 'spleen'
+  | 'stomach'
+  | 'lungs'
+  | 'large intestine'
+  | 'kidneys'
+  | 'bladder'
+  | 'liver'
+  | 'gall bladder';
 
 export enum Organ {
-  Heart = 'Heart',
-  SmallIntestine = 'Small Intestine',
-  Spleen = 'Spleen',
-  Stomach = 'Stomach',
-  Lungs = 'Lungs',
-  LargeIntestine = 'Large Intestine',
-  Kidneys = 'Kidneys',
-  Bladder = 'Bladder',
-  Liver = 'Liver',
-  GallBladder = 'Gall Bladder',
+  heart = 'heart',
+  smallIntestine = 'small intestine',
+  spleen = 'spleen',
+  stomach = 'stomach',
+  lungs = 'lungs',
+  largeIntestine = 'large intestine',
+  kidneys = 'kidneys',
+  bladder = 'bladder',
+  liver = 'liver',
+  gallBladder = 'gall bladder',
 }
 
 export type MeridianT =
-  | 'Heart'
-  | 'Small Intestine'
-  | 'Spleen'
-  | 'Stomach'
-  | 'Pancreas'
-  | 'Lungs'
-  | 'Skin'
-  | 'Large Intestine'
-  | 'Kidney'
-  | 'Ears'
-  | 'Bladder'
-  | 'Liver'
-  | 'Eyes'
-  | 'Gall Bladder';
+  | 'heart'
+  | 'small intestine'
+  | 'spleen'
+  | 'stomach'
+  | 'pancreas'
+  | 'lungs'
+  | 'skin'
+  | 'large intestine'
+  | 'kidney'
+  | 'ears'
+  | 'bladder'
+  | 'liver'
+  | 'eyes'
+  | 'gall bladder';
 
 export enum Meridian {
-  Heart = 'Heart',
-  SmallIntestine = 'Small Intestine',
-  Spleen = 'Spleen',
-  Stomach = 'Stomach',
-  Pancreas = 'Pancreas',
-  Lungs = 'Lungs',
-  Skin = 'Skin',
-  LargeIntestine = 'Large Intestine',
-  Kidney = 'Kidney',
-  Ears = 'Ears',
-  Bladder = 'Bladder',
-  Liver = 'Liver',
-  Eyes = 'Eyes',
-  GallBladder = 'Gall Bladder',
+  heart = 'heart',
+  smallIntestine = 'small intestine',
+  spleen = 'spleen',
+  stomach = 'stomach',
+  pancreas = 'pancreas',
+  lungs = 'lungs',
+  skin = 'skin',
+  largeIntestine = 'large intestine',
+  kidney = 'kidney',
+  ears = 'ears',
+  bladder = 'bladder',
+  liver = 'liver',
+  eyes = 'eyes',
+  gallBladder = 'gall bladder',
 }

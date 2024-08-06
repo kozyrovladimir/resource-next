@@ -20,6 +20,15 @@ const SearchPanel: React.FC = () => {
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
+
+      if(value === 'reset') {
+        console.log('reset ', name);
+        const params = new URLSearchParams(searchParams?.toString())
+        params.delete(name)
+        router.push(pathname + '?' + params.toString());
+        return;
+      }
+
       const params = new URLSearchParams(searchParams?.toString())
       params.set(name, value)
 

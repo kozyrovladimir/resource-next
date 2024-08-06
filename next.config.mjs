@@ -5,7 +5,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'yoqiresource.org',
+                hostname: 'static.yoqi.run',
                 pathname: '**',
             }
         ]

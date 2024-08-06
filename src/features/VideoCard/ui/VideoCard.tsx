@@ -84,7 +84,7 @@ const VideoCard: React.FC<VideoListItemTypeProps> = ({ video }) => {
             scroll={true}
       >
         <div className={styles.videoCardImage}>
-          <Image fill={true} src={`https://yoqiresource.org/${video.thumbnail}`} alt="thumbnail" sizes={'100%'}/>
+          <Image fill={true} src={video.thumbnail || 'https://static.yoqi.run/resource/movement_thumbs/iron_bridge.jpg'} alt="thumbnail" sizes={'100%'}/>
         </div>
       </Link>
       <div>
