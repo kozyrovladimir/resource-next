@@ -43,9 +43,6 @@ const VideoCard: React.FC<VideoListItemTypeProps> = ({video}) => {
     updateQueryString('organ', video.organ);
   };
 
-
-  const onClickHandler = () => console.log(`move to video page ${video.id}`);
-
   return (
     <div data-testid="video_card" className={styles.videoCard}>
       <Link href={{

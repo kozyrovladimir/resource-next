@@ -10,16 +10,21 @@ import useFilteredParams from "@/utils/hooks/useFilteredParams";
 const VideoList = () => {
   const {videoList, isLoading, error} = useFetchVideos();
 
-  const filters = useFilteredParams();
+  const params = useFilteredParams();
 
-  const filtersKeys = Object.keys(filters).filter((key) => filters[key as keyof typeof filters]);
+  const filtersKeys = Object.keys(params.filters).filter((key) => params.filters[key as keyof typeof params.filters]);
 
   const filteredVideos = videoList.filter((video) => {
     return filtersKeys.every((key) => {
-      console.log(key, video[key as keyof typeof video], filters[key as keyof typeof filters]);
-      return video[key as keyof typeof video] === filters[key as keyof typeof filters];
+      console.log(key, video[key as keyof typeof video], params.filters[key as keyof typeof params.filters]);
+      return video[key as keyof typeof video] === params.filters[key as keyof typeof params.filters];
     });
   });
+
+  const filteredVideosBySearch = filteredVideos.filter((video) => {
+      return video.title.toLowerCase().includes((params.search ?? '').toLowerCase());
+    }
+  );
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -32,7 +37,7 @@ const VideoList = () => {
   return (
     <VideoCategoryGridContainer>
       {
-        filteredVideos.map((video) => {
+        filteredVideosBySearch.map((video) => {
           return (
             <VideoCard
               key={video.id}

@@ -1,10 +1,11 @@
 "use client";
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './SearchPanel.module.scss';
 import {Input, Select} from "@/shared";
 import {Phase, Season, Element, Organ, Dantain} from "@/shared/models";
 import {useUpdateQueryString} from "@/utils/hooks/useUpdateQueryString";
+import useDebounce from "@/utils/hooks/useDebounce";
 
 const SearchPanel: React.FC = () => {
   const phaseItems = Object.values(Phase);
@@ -15,10 +16,20 @@ const SearchPanel: React.FC = () => {
 
   const updateQueryString = useUpdateQueryString();
 
+  const [value, setValue] = React.useState('');
+  const debouncedValue = useDebounce(value);
+  const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  }
+
+  useEffect(() => {
+      updateQueryString('search', debouncedValue);
+    }, [debouncedValue]);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.search}>
-        <Input/>
+        <Input value={value} onChange={handleValueChange}/>
       </div>
       <div className={styles.select1}>
         <Select onValueChange={value => updateQueryString('phase', value)}
