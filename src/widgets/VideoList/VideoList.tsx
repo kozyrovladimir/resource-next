@@ -34,6 +34,10 @@ const VideoList = () => {
     return <div>Error: {error}</div>;
   }
 
+  if (!filteredVideosBySearch.length) {
+    return <div>No videos found</div>;
+  }
+
   return (
     <VideoCategoryGridContainer>
       {

@@ -16,12 +16,12 @@ export enum Phase {
   integrate = 'integrate',
 }
 
-export type SeasonT = 'spring' | 'summer' | 'late summer' | 'autumn' | 'winter';
+export type SeasonT = 'spring' | 'summer' | 'late_summer' | 'autumn' | 'winter';
 
 export enum Season {
   spring = 'spring',
   summer = 'summer',
-  lateSummer = 'late summer',
+  lateSummer = 'late_summer',
   autumn = 'autumn',
   winter = 'winter',
 }

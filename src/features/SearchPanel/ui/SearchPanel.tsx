@@ -6,6 +6,7 @@ import {Input, Select} from "@/shared";
 import {Phase, Season, Element, Organ, Dantain} from "@/shared/models";
 import {useUpdateQueryString} from "@/utils/hooks/useUpdateQueryString";
 import useDebounce from "@/utils/hooks/useDebounce";
+import {Search} from '@/shared';
 
 const SearchPanel: React.FC = () => {
   const phaseItems = Object.values(Phase);
@@ -23,45 +24,48 @@ const SearchPanel: React.FC = () => {
   }
 
   useEffect(() => {
-      updateQueryString('search', debouncedValue);
-    }, [debouncedValue]);
+    updateQueryString('search', debouncedValue);
+  }, [debouncedValue]);
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.search}>
-        <Input value={value} onChange={handleValueChange}/>
+    <>
+      <h2 className={styles.title}>Yoqi resource</h2>
+      <div className={styles.wrapper}>
+        <div className={styles.search}>
+          <Input iconEnd={<Search style={{bottom: '-0.25rem', position: 'relative'}}/>} value={value} onChange={handleValueChange}/>
+        </div>
+        <div className={styles.select1}>
+          <Select onValueChange={value => updateQueryString('phase', value)}
+                  placeholder={'Phase'} items={phaseItems}
+                  selectKey={'phase'}
+          />
+        </div>
+        <div className={styles.select2}>
+          <Select onValueChange={value => updateQueryString('season', value)}
+                  placeholder={'Season'} items={seasonItems}
+                  selectKey={'season'}
+          />
+        </div>
+        <div className={styles.select3}>
+          <Select onValueChange={value => updateQueryString('element', value)}
+                  placeholder={'Element'} items={elementItems}
+                  selectKey={'element'}
+          />
+        </div>
+        <div className={styles.select4}>
+          <Select onValueChange={value => updateQueryString('organ', value)}
+                  placeholder={'Organ'} items={organItems}
+                  selectKey={'organ'}
+          />
+        </div>
+        <div className={styles.select5}>
+          <Select onValueChange={value => updateQueryString('dantian', value)}
+                  placeholder={'Dantian'} items={dantainItems}
+                  selectKey={'dantian'}
+          />
+        </div>
       </div>
-      <div className={styles.select1}>
-        <Select onValueChange={value => updateQueryString('phase', value)}
-                placeholder={'Phase'} items={phaseItems}
-                selectKey={'phase'}
-        />
-      </div>
-      <div className={styles.select2}>
-        <Select onValueChange={value => updateQueryString('season', value)}
-                placeholder={'Season'} items={seasonItems}
-                selectKey={'season'}
-        />
-      </div>
-      <div className={styles.select3}>
-        <Select onValueChange={value => updateQueryString('element', value)}
-                placeholder={'Element'} items={elementItems}
-                selectKey={'element'}
-        />
-      </div>
-      <div className={styles.select4}>
-        <Select onValueChange={value => updateQueryString('organ', value)}
-                placeholder={'Organ'} items={organItems}
-                selectKey={'organ'}
-        />
-      </div>
-      <div className={styles.select5}>
-        <Select onValueChange={value => updateQueryString('dantian', value)}
-                placeholder={'Dantian'} items={dantainItems}
-                selectKey={'dantian'}
-        />
-      </div>
-    </div>
+    </>
   );
 };
 

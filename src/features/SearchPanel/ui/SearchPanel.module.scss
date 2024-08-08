@@ -1,4 +1,7 @@
 .wrapper {
+  padding-top: 28px;
+  padding-bottom: 28px;
+
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 3fr repeat(5, 2fr);
@@ -6,10 +9,16 @@
         "search select1 select2 select3 select4 select5";
 
   @media screen and (max-width: 1366px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
     grid-gap: 12px;
   }
 
   @media screen and (max-width: 960px) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
@@ -19,6 +28,9 @@
   }
 
   @media screen and (max-width: 480px) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -53,5 +65,33 @@
 
 .select5 {
   grid-area: select5;
+}
+
+.title {
+  text-align: center;
+
+  margin-top: 28px;
+
+  color: var(--color-main-yellow);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 44px;
+
+  @media screen and (max-width: 1366px) {
+    margin-top: 20px;
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin-top: 28px;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-top: 16px;
+
+    font-size: 24px;
+    line-height: 24px;
+  }
 }
 
