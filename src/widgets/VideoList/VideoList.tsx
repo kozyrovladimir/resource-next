@@ -8,7 +8,11 @@ import VideoCategoryGridContainer
 import useFilteredParams from "@/utils/hooks/useFilteredParams";
 import {VideoTable} from "@/features/VideoTable";
 
-const VideoList = () => {
+type VideoListType = {
+  isTableView: boolean;
+}
+
+const VideoList: React.FC<VideoListType> = ({isTableView}) => {
   const {videoList, isLoading, error} = useFetchVideos();
 
   const params = useFilteredParams();
@@ -40,20 +44,23 @@ const VideoList = () => {
 
   return (
     <>
-      <VideoCategoryGridContainer>
-        {
-          filteredVideosBySearch.map((video) => {
-            return (
-              <VideoCard
-                key={video.id}
-                video={video}
-              />
-            )
-          })}
-      </VideoCategoryGridContainer>
-      <VideoTable
-        videoList={ filteredVideosBySearch}
-      />
+      {
+        !isTableView
+          ? <VideoCategoryGridContainer>
+            {
+              filteredVideosBySearch.map((video) => {
+                return (
+                  <VideoCard
+                    key={video.id}
+                    video={video}
+                  />
+                )
+              })}
+          </VideoCategoryGridContainer>
+          : <VideoTable
+            videoList={ filteredVideosBySearch}
+          />
+      }
     </>
   );
 };

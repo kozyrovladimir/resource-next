@@ -43,7 +43,7 @@ const TableRowItem: React.FC<{video: VideoListItemI}> = ({video}) => {
 
   return (
     <TableRow>
-      <TableCell>
+      <TableCell sx={{maxWidth: '420px'}}>
         {video.title}
       </TableCell>
       <TableCell sx={{color: phaseColor}} align="left">

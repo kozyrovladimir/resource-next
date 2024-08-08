@@ -3,9 +3,13 @@ import React, {FormEventHandler} from 'react';
 import * as Switch from '@radix-ui/react-switch';
 import styles from './ViewSwitch.module.scss';
 
-const ViewSwitch = () => {
+type ViewSwitchType = {
+  checked: boolean;
+  setChecked: (checked: boolean) => void;
 
-  const [checked, setChecked] = React.useState(false);
+}
+
+const ViewSwitch: React.FC<ViewSwitchType> = ({checked, setChecked}) => {
 
   return (
     <div className={styles.SwitchWrapper}>
