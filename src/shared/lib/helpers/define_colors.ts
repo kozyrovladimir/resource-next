@@ -40,7 +40,7 @@ export function defineElementColor(element: ElementT | undefined): string {
 
 export function defineSeasonColor(element: SeasonT | undefined): string {
   switch (element) {
-    case 'late summer':
+    case 'late_summer':
       return Colors.orange;
     case 'autumn':
       return Colors.gray;

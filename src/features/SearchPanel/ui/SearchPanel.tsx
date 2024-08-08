@@ -7,6 +7,7 @@ import {Phase, Season, Element, Organ, Dantain} from "@/shared/models";
 import {useUpdateQueryString} from "@/utils/hooks/useUpdateQueryString";
 import useDebounce from "@/utils/hooks/useDebounce";
 import {Search} from '@/shared';
+import {definePhaseColor, defineSeasonColor, defineElementColor, defineOrganColor} from "@/shared/lib/helpers";
 
 const SearchPanel: React.FC = () => {
   const phaseItems = Object.values(Phase);
@@ -38,30 +39,36 @@ const SearchPanel: React.FC = () => {
           <Select onValueChange={value => updateQueryString('phase', value)}
                   placeholder={'Phase'} items={phaseItems}
                   selectKey={'phase'}
+                  //any
+                  defineColorFunction={definePhaseColor}
           />
         </div>
         <div className={styles.select2}>
           <Select onValueChange={value => updateQueryString('season', value)}
                   placeholder={'Season'} items={seasonItems}
                   selectKey={'season'}
+                  defineColorFunction={defineSeasonColor}
           />
         </div>
         <div className={styles.select3}>
           <Select onValueChange={value => updateQueryString('element', value)}
                   placeholder={'Element'} items={elementItems}
                   selectKey={'element'}
+                  defineColorFunction={defineElementColor}
           />
         </div>
         <div className={styles.select4}>
           <Select onValueChange={value => updateQueryString('organ', value)}
                   placeholder={'Organ'} items={organItems}
                   selectKey={'organ'}
+                  defineColorFunction={defineOrganColor}
           />
         </div>
         <div className={styles.select5}>
           <Select onValueChange={value => updateQueryString('dantian', value)}
                   placeholder={'Dantian'} items={dantainItems}
                   selectKey={'dantian'}
+                  defineColorFunction={() => '#000'}
           />
         </div>
       </div>

@@ -11,13 +11,15 @@ type SelectProps = {
   items: string[];
   selectKey: string;
   onValueChange: (value: string) => void;
+  defineColorFunction: (value: any) => string;
 }
 
 const Select: React.FC<SelectProps> = ({
                                          placeholder,
                                          items,
                                          onValueChange,
-                                         selectKey
+                                         selectKey,
+                                         defineColorFunction
                                        }) => {
   const searchParams = useSearchParams();
   const selectedValue = searchParams?.get(selectKey);
@@ -43,11 +45,11 @@ const Select: React.FC<SelectProps> = ({
             <SelectRadix.Viewport>
               {items.map((item, index) => (
                 <SelectRadix.Item key={index} className={styles.item} value={item}>
-                  <SelectRadix.ItemText>{item}</SelectRadix.ItemText>
+                  <SelectRadix.ItemText><span style={{color: defineColorFunction(item)}}>{item}</span></SelectRadix.ItemText>
                   <SelectRadix.ItemIndicator/>
                 </SelectRadix.Item>
               ))}
-              <SelectRadix.Separator className={styles.separator} />
+              <SelectRadix.Separator className={styles.separator}/>
               <SelectRadix.Item value={'reset'} className={styles.item}>
                 <SelectRadix.ItemText>Reset filter</SelectRadix.ItemText>
                 <SelectRadix.Icon className={styles.icon}>
