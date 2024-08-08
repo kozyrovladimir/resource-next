@@ -6,6 +6,7 @@ import VideoCard from "@/features/VideoCard/ui/VideoCard";
 import VideoCategoryGridContainer
   from "@/shared/ui/VideoCategoryGridContainer/VideoCategoryGridContainer";
 import useFilteredParams from "@/utils/hooks/useFilteredParams";
+import {VideoTable} from "@/features/VideoTable";
 
 const VideoList = () => {
   const {videoList, isLoading, error} = useFetchVideos();
@@ -38,17 +39,22 @@ const VideoList = () => {
   }
 
   return (
-    <VideoCategoryGridContainer>
-      {
-        filteredVideosBySearch.map((video) => {
-          return (
-            <VideoCard
-              key={video.id}
-              video={video}
-            />
-          )
-        })}
-    </VideoCategoryGridContainer>
+    <>
+      <VideoCategoryGridContainer>
+        {
+          filteredVideosBySearch.map((video) => {
+            return (
+              <VideoCard
+                key={video.id}
+                video={video}
+              />
+            )
+          })}
+      </VideoCategoryGridContainer>
+      <VideoTable
+        videoList={ filteredVideosBySearch}
+      />
+    </>
   );
 };
 
