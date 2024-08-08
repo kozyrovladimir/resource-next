@@ -11,7 +11,7 @@ import {VideoListItemI} from "@/shared/models";
 import {
   defineElementColor, defineOrganColor,
   definePhaseColor,
-  defineSeasonColor
+  defineSeasonColor, formatTagString
 } from "@/shared/lib/helpers";
 import {useUpdateQueryString} from "@/utils/hooks/useUpdateQueryString";
 import styles from './VideoTable.module.scss';
@@ -47,16 +47,16 @@ const TableRowItem: React.FC<{video: VideoListItemI}> = ({video}) => {
         {video.title}
       </TableCell>
       <TableCell sx={{color: phaseColor}} align="left">
-          <span className={styles.tableText} onClick={phaseOnClick}>{video.phase}</span>
+          <span className={styles.tableText} onClick={phaseOnClick}>{video.phase && formatTagString(video.phase)}</span>
       </TableCell>
       <TableCell sx={{color: seasonColor}} align="left">
-          <span className={styles.tableText} onClick={seasonOnClick}>{video.season}</span>
+          <span className={styles.tableText} onClick={seasonOnClick}>{video.season && formatTagString(video.season)}</span>
       </TableCell>
       <TableCell sx={{color: elementColor}} align="left">
-          <span className={styles.tableText} onClick={elementOnClick}>{video.element}</span>
+          <span className={styles.tableText} onClick={elementOnClick}>{video.element && formatTagString(video.element)}</span>
       </TableCell>
       <TableCell sx={{color: organColor}} align="left">
-          <span className={styles.tableText} onClick={organOnClick}>{video.organ}</span>
+          <span className={styles.tableText} onClick={organOnClick}>{video.organ && formatTagString(video.organ)}</span>
       </TableCell>
     </TableRow>
   );

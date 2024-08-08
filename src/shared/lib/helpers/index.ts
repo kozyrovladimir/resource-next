@@ -6,3 +6,5 @@ export {
   defineDefaultColor,
   defineSeasonColor
 } from './define_colors';
+
+export {formatTagString} from './formatTagString';

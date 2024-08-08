@@ -5,6 +5,7 @@ import React from 'react';
 import {VscChevronDown, VscClose} from "react-icons/vsc";
 import styles from './Select.module.scss';
 import {useSearchParams} from "next/navigation";
+import {formatTagString} from "@/shared/lib/helpers";
 
 type SelectProps = {
   placeholder: string;
@@ -45,7 +46,7 @@ const Select: React.FC<SelectProps> = ({
             <SelectRadix.Viewport>
               {items.map((item, index) => (
                 <SelectRadix.Item key={index} className={styles.item} value={item}>
-                  <SelectRadix.ItemText><span style={{color: defineColorFunction(item)}}>{item}</span></SelectRadix.ItemText>
+                  <SelectRadix.ItemText><span style={{color: defineColorFunction(item)}}>{formatTagString(item)}</span></SelectRadix.ItemText>
                   <SelectRadix.ItemIndicator/>
                 </SelectRadix.Item>
               ))}

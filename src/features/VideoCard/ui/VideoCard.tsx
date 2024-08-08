@@ -7,12 +7,11 @@ import {
   defineElementColor,
   definePhaseColor,
   defineSeasonColor,
-  defineOrganColor
+  defineOrganColor, formatTagString
 } from '@/shared/lib/helpers';
 
 import {VideoListItemTag} from './VideoListItemTag';
 import {VideoListItemI} from "@/shared/models";
-import Box from "@mui/material/Box";
 import {useUpdateQueryString} from "@/utils/hooks/useUpdateQueryString";
 
 interface VideoListItemTypeProps {
@@ -63,22 +62,22 @@ const VideoCard: React.FC<VideoListItemTypeProps> = ({video}) => {
           </span>
         </div>
         <div className={styles.videoCardTags}>
-          <VideoListItemTag color={phaseColor}
+          {video.phase && <VideoListItemTag color={phaseColor}
                             onClick={phaseOnClick}>
-            {video.phase}
-          </VideoListItemTag>
-          <VideoListItemTag color={elementColor}
+            {formatTagString(video.phase)}
+          </VideoListItemTag>}
+          {video.element && <VideoListItemTag color={elementColor}
                             onClick={elementOnClick}>
-            {video.element}
-          </VideoListItemTag>
-          <VideoListItemTag color={seasonColor}
+            {formatTagString(video.element)}
+          </VideoListItemTag>}
+          {video.season && <VideoListItemTag color={seasonColor}
                             onClick={seasonOnClick}>
-            {video.season}
-          </VideoListItemTag>
-          <VideoListItemTag color={organColor}
+            {formatTagString(video.season)}
+          </VideoListItemTag>}
+          {video.organ && <VideoListItemTag color={organColor}
                             onClick={organOnClick}>
-            {video.organ}
-          </VideoListItemTag>
+            {formatTagString(video.organ)}
+          </VideoListItemTag>}
         </div>
         <div className={styles.videoCardInfo}>
           <p data-testid="video_card__short_description">{video.description}</p>
