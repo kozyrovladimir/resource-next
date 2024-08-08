@@ -16,7 +16,6 @@ const VideoList = () => {
 
   const filteredVideos = videoList.filter((video) => {
     return filtersKeys.every((key) => {
-      console.log(key, video[key as keyof typeof video], params.filters[key as keyof typeof params.filters]);
       return video[key as keyof typeof video] === params.filters[key as keyof typeof params.filters];
     });
   });

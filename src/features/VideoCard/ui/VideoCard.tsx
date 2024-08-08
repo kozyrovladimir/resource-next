@@ -62,7 +62,7 @@ const VideoCard: React.FC<VideoListItemTypeProps> = ({video}) => {
             {video.title}
           </span>
         </div>
-        <Box sx={{flexGrow: 1, display: 'flex', marginTop: '4px'}}>
+        <div className={styles.videoCardTags}>
           <VideoListItemTag color={phaseColor}
                             onClick={phaseOnClick}>
             {video.phase}
@@ -79,7 +79,7 @@ const VideoCard: React.FC<VideoListItemTypeProps> = ({video}) => {
                             onClick={organOnClick}>
             {video.organ}
           </VideoListItemTag>
-        </Box>
+        </div>
         <div className={styles.videoCardInfo}>
           <p data-testid="video_card__short_description">{video.description}</p>
         </div>
