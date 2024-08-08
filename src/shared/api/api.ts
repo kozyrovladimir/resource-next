@@ -17,14 +17,6 @@ const instance = axios.create({
   }
 });
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc5MzE2NzQ1LCJleHAiOjE2Nzk2NzY3NDV9.85gMA0cJHwQORnEva9nXbnUh7eiG1OMNipNdoM8p_7I';
-
-instance.interceptors.request.use((config) => {
-    config.headers['Authorization'] = `Bearer ${token}`;
-    return config;
-  }
-);
-
 export const getVideos = async (): Promise<AxiosResponse<VideoListItemI[]>> => {
   console.log('getVideos');
   return await instance.get<VideoListItemI[]>('movements');

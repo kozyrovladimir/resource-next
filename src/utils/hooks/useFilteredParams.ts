@@ -13,6 +13,7 @@ const useFilteredParams = () => {
       dantian: null | string,
     },
     search: null | string,
+    page: number,
   }
 
   const [filters, setFilters] = useState<Filters>({
@@ -24,6 +25,7 @@ const useFilteredParams = () => {
       dantian: null,
     },
     search: null,
+    page: 1,
   });
 
   useEffect(() => {
@@ -37,6 +39,7 @@ const useFilteredParams = () => {
         dantian: searchParams?.get('dantian') || null,
       },
       search: searchParams?.get('search') || null,
+      page: Number(searchParams?.get('page')) || 1,
     });
   }, [searchParams]);
 

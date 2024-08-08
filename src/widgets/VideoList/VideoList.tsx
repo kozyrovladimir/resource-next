@@ -7,6 +7,9 @@ import VideoCategoryGridContainer
   from "@/shared/ui/VideoCategoryGridContainer/VideoCategoryGridContainer";
 import useFilteredParams from "@/utils/hooks/useFilteredParams";
 import {VideoTable} from "@/features/VideoTable";
+import VideoPaginationRouter
+  from "@/components/VideoPaginationRouter/VideoPaginationRouter";
+import {packItems} from "@/utils/helpers/packItems";
 
 type VideoListType = {
   isTableView: boolean;
@@ -42,13 +45,23 @@ const VideoList: React.FC<VideoListType> = ({isTableView}) => {
     return <div>No videos found</div>;
   }
 
+  const maxItems = 12;
+
+  const videoPackages = packItems(filteredVideosBySearch, maxItems);
+
+  // check correct page from url
+
+  if (params.page > videoPackages.length) {
+    return <div>Page not found</div>;
+  }
+
   return (
     <>
       {
         !isTableView
           ? <VideoCategoryGridContainer>
             {
-              filteredVideosBySearch.map((video) => {
+              videoPackages[params.page - 1].map((video) => {
                 return (
                   <VideoCard
                     key={video.id}
@@ -58,9 +71,13 @@ const VideoList: React.FC<VideoListType> = ({isTableView}) => {
               })}
           </VideoCategoryGridContainer>
           : <VideoTable
-            videoList={ filteredVideosBySearch}
+            videoList={videoPackages[params.page - 1]}
           />
       }
+      <VideoPaginationRouter
+        numPages={videoPackages.length}
+        page={params.page}
+      />
     </>
   );
 };
