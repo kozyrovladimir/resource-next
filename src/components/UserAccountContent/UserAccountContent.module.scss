@@ -1,0 +1,36 @@
+.infoGridContainer {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "profile subscription"
+    "payments payments";
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "profile"
+      "subscription"
+      "payments";
+  }
+}
+
+.profileInfo {
+  grid-area: profile;
+}
+
+.subscriptionInfo {
+  grid-area: subscription;
+}
+
+.paymentsInfo {
+  max-width: 100%;
+  overflow-x: scroll;
+  grid-area: payments;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

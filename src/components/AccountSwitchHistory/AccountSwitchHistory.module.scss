@@ -1,0 +1,52 @@
+.switchHistory {
+  display: flex;
+  gap: 10px;
+  background-color: var(--color-main-grey-light);
+  width: max-content;
+  padding: 2px;
+  border-radius: 6px;
+}
+
+.button:global(.yoqi_button_primary) {
+  background-color: transparent;
+
+  min-width: 140px;
+  padding: 0.375rem 3.5rem;
+
+  @media screen and (max-width: 480px) {
+    padding: 0.375rem 2.5rem;
+  }
+
+  &:hover, &:active {
+    background-color: var(--color-main-black);
+    color: var(--color-main-white);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 1px 0 rgba(0, 0, 0, 0.04);
+  }
+}
+
+// for fix mobile hover
+.button_touchable:global(.yoqi_button_primary_touchable) {
+  &:hover, &:active {
+    background-color: var(--color-main-grey);
+    color: var(--color-main-black);
+  }
+}
+
+.button_active:global(.yoqi_button_primary) {
+  color: var(--color-main-black);
+  background-color: var(--color-main-white);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.button_active_touchable:global(.yoqi_button_primary_touchable) {
+  &:hover, &:active {
+    background-color: var(--color-main-black);
+    color: var(--color-main-white);
+
+    padding: 0.375rem 0.5rem;
+
+    @media screen and (max-width: 480px) {
+      padding: 0.375rem 0.5rem;
+    }
+  }
+}

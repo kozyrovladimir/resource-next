@@ -10,8 +10,9 @@ import {PurchaseHistoryItem} from "@/models/PurchaseHistory";
 const projectID = 3; // This is the project ID for UNIVERSITY
 
 const instance = axios.create({
-  baseURL: 'https://videos.yoqi-test.com/api/',
-  // withCredentials: true,
+  // baseURL: 'https://videos.yoqi-test.com/api/',
+  baseURL: '/api',
+  withCredentials: true,
   headers: {
     'Cache-Control': 'max-age=3600',
   }

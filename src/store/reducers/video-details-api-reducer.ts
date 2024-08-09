@@ -10,7 +10,7 @@ const videoDetailInitialSate: VideoDetailAPIT = {
     id: 1,
     title: 'TT ATTUNE- Earth  Purification',
     phase: 'purge',
-    season: 'late summer',
+    season: 'late_summer',
     organ: 'spleen',
     element: 'earth',
     dantian: 'Upper',
