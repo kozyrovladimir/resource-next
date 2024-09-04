@@ -252,7 +252,7 @@ const ProfileInfo: React.FC = () => {
               alignItems={'center'}
               width={'170px'}
             >
-              <Typography sx={{color: 'var(--color-text-black)'}}>
+              <Typography sx={{color: 'var(--color-text-black)', maxWidth: '170px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>
                 {userData.email}
               </Typography>
             </Stack>
