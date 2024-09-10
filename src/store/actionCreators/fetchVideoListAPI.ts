@@ -22,12 +22,9 @@ export const fetchVideoListAPI = createAsyncThunk<
 
     if (authorized === 'false') {
       dispatch(setUser(false));
-      // localStorage.removeItem('token');
-      // console.log('unauthorized');
     } else {
       dispatch(setUser(true));
       dispatch(setSubscriptionStatus(subscriptionStatus));
-      // console.log('authorized');
     }
     return videos;
   } catch (error) {

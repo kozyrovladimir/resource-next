@@ -26,11 +26,12 @@ export const useLogout = () => {
       await api.logout().then(() => {
         dispatch(setUser(false));
         setIsLoggingOut(false);
-        router.push('/');
       });
     } catch (error: any) {
       setIsLoggingOut(false);
       setLogoutError(error?.message);
+    } finally {
+      router.push('/');
     }
   };
 
