@@ -39,7 +39,6 @@ const HeaderContent: React.FC<PropsWithChildren> = ({children}) => {
             <MenuItemWithSubmenu menuTitle={'SHOP'}>
               <a className={styles.subMenuItem} href="https://www.yoqi.com/videos-on-demand">VIDEOS ON DEMAND</a>
               <a className={styles.subMenuItem} href="https://www.yoqi.com/new-products">ONLINE TRAINING COURSE</a>
-              <a className={styles.subMenuItem} href="https://yoqiflowwear.com">YOQI FLOW WEAR</a>
               <a className={styles.subMenuItem} href="https://www.yoqi.com/dvds-downloads">DVDs</a>
               <a className={styles.subMenuItem} href="https://www.yoqi.com/audio-downloads">AUDIO DOWNLOADS</a>
               <a className={styles.subMenuItem} href="https://www.yoqi.com/yoqi-gift-cards">YOQI GIFT CARDS</a>

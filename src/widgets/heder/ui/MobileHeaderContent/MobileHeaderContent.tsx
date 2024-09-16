@@ -73,8 +73,6 @@ const MobileHeaderContent: React.FC<PropsWithChildren> = ({children}) => {
             ON DEMAND</a>
           <a className={styles.subMenuItem} href="https://www.yoqi.com/new-products">ONLINE
             TRAINING COURSE</a>
-          <a className={styles.subMenuItem} href="https://yoqiflowwear.com">YOQI FLOW
-            WEAR</a>
           <a className={styles.subMenuItem}
              href="https://www.yoqi.com/dvds-downloads">DVDs</a>
           <a className={styles.subMenuItem} href="https://www.yoqi.com/audio-downloads">AUDIO
