@@ -1,8 +1,7 @@
 import { Colors } from '../../constants';
-
 import { ElementT, OrganT, PhaseT, SearchOptions, SeasonT } from '../../models';
 
-export function definePhaseColor(phase: PhaseT | undefined): string {
+export function definePhaseColor(phase: PhaseT): string {
   switch (phase) {
     case 'attune':
       return Colors.orange;
@@ -21,7 +20,7 @@ export function definePhaseColor(phase: PhaseT | undefined): string {
   }
 }
 
-export function defineElementColor(element: ElementT | undefined): string {
+export function defineElementColor(element: ElementT): string {
   switch (element) {
     case 'earth':
       return Colors.orange;
@@ -38,8 +37,8 @@ export function defineElementColor(element: ElementT | undefined): string {
   }
 }
 
-export function defineSeasonColor(element: SeasonT | undefined): string {
-  switch (element) {
+export function defineSeasonColor(season: SeasonT): string {
+  switch (season) {
     case 'late_summer':
       return Colors.orange;
     case 'autumn':
@@ -55,8 +54,8 @@ export function defineSeasonColor(element: SeasonT | undefined): string {
   }
 }
 
-export function defineOrganColor(element: OrganT | undefined): string {
-  switch (element) {
+export function defineOrganColor(organ: OrganT): string {
+  switch (organ) {
     case 'spleen':
       return Colors.orange;
     case 'lungs':
@@ -82,22 +81,29 @@ export function defineOrganColor(element: OrganT | undefined): string {
   }
 }
 
-export function defineDefaultColor(element: string | undefined): string {
+export function defineDefaultColor(): string {
   return Colors.defaultColor;
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const defineColorGenerator = (item: SearchOptions) => {
+type DefineColorFunction<T extends SearchOptions> =
+  T extends SearchOptions.phase ? (phase: PhaseT) => string :
+    T extends SearchOptions.season ? (season: SeasonT) => string :
+      T extends SearchOptions.element ? (element: ElementT) => string :
+        T extends SearchOptions.organ ? (organ: OrganT) => string :
+          never;
+
+
+export const defineColorGenerator = <T extends SearchOptions>(item: T): DefineColorFunction<T> => {
   switch (item) {
     case SearchOptions.phase:
-      return definePhaseColor;
+      return definePhaseColor as DefineColorFunction<T>;
     case SearchOptions.season:
-      return defineSeasonColor;
+      return defineSeasonColor as DefineColorFunction<T>;
     case SearchOptions.element:
-      return defineElementColor;
+      return defineElementColor as DefineColorFunction<T>;
     case SearchOptions.organ:
-      return defineOrganColor;
+      return defineOrganColor as DefineColorFunction<T>;
     default:
-      return defineDefaultColor;
+      return defineDefaultColor as unknown as DefineColorFunction<T>;
   }
 };

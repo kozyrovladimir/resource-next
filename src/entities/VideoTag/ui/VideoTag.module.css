@@ -1,0 +1,20 @@
+.tagContainer {
+    display: flex;
+    width: 160px;
+    justify-content: space-between;
+
+    line-height: 100%;
+    font-size: 20px;
+}
+
+.tagName {
+    color: var(--color-text-grey-dark);
+}
+
+.tagValue {
+    text-decoration: underline;
+}
+
+.tagValue:hover {
+    cursor: pointer;
+}

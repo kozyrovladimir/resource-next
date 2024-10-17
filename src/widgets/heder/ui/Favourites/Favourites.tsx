@@ -16,7 +16,7 @@ const Favourites = () => {
   return (
     <div>
       <span className={styles.slash}>/</span>
-      <Link href={'/videos/favourites'} style={{bottom: '-0.25rem', position: 'relative'}}>
+      <Link href={'/video/favourites'} style={{bottom: '-0.25rem', position: 'relative'}}>
         <FavoriteBorderIcon className={styles.icon}  fontSize={"small"}/>
       </Link>
     </div>

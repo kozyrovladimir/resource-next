@@ -15,7 +15,7 @@ const MobileFavourites = () => {
 
   return (
     <MobileMenuItem>
-      <Link href={'/videos/favourites'} style={{bottom: '-0.25rem', position: 'relative', textDecoration: 'none'}}>
+      <Link href={'/video/favourites'} style={{bottom: '-0.25rem', position: 'relative', textDecoration: 'none'}}>
         <span className={styles.favouritesText}>FAVOURITES</span>
       </Link>
     </MobileMenuItem>

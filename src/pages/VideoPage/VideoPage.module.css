@@ -1,0 +1,99 @@
+.contentWrapper {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 960px) {
+        flex-direction: column;
+    }
+}
+
+.videoContainer {
+    border: 1px solid whitesmoke;
+    border-radius: 16px;
+    height: 400px;
+    padding: 20px;
+    flex: 1;
+}
+
+.infoContainer {
+    flex: 1;
+}
+
+.videoTitle {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 100%;
+    color: var(--color-main-yellow);
+
+    @media (max-width: 1366px) {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+
+}
+
+.authorInfoContainer {
+    padding: 24px 0 24px 0;
+}
+
+.authorInfoText {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    color: var(--color-text-grey-dark);
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.authorInfoText span {
+    color: var(--color-text-black);
+}
+
+.tagColumnsContainer {
+    padding: 24px 0 24px 0;
+    display: flex;
+    gap: 80px;
+
+    @media (max-width: 480px) {
+       flex-direction: column;
+        gap: 16px;
+    }
+}
+
+.videoTagsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 112%;
+    color: var(--color-text-black-light);
+}
+
+.textContainer {
+    margin: 16px 0 16px 0;
+    line-height: 112%;
+    color: var(--color-text-black-light);
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.textContainer h3 {
+    color: var(--color-text-black);
+    font-weight: 700;
+}

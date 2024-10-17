@@ -7,6 +7,7 @@ export enum SearchOptions {
 }
 
 export type PhaseT = 'attune' | 'purge' | 'tonify' | 'grow' | 'circulate' | 'integrate';
+
 export enum Phase {
   attune = 'attune',
   purge = 'purge',
@@ -101,3 +102,11 @@ export enum Meridian {
   eyes = 'eyes',
   gallBladder = 'gall bladder',
 }
+
+export type SearchValueType<T extends SearchOptions> =
+  T extends SearchOptions.phase ? PhaseT :
+    T extends SearchOptions.season ? SeasonT :
+      T extends SearchOptions.element ? ElementT :
+        T extends SearchOptions.organ ? OrganT :
+          T extends SearchOptions.dantain ? DantainT :
+            never;
