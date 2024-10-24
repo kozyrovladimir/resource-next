@@ -7,6 +7,11 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'static.yoqi.run',
                 pathname: '**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'static.yoqi.com',
+                pathname: '**',
             }
         ]
     }

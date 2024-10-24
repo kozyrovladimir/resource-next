@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media  screen  and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .nav {
     display: block;
   }
@@ -29,6 +29,7 @@
 
 .burgerAndTitleWrapper {
   position: relative;
+  display: flex;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--color-border-grey-light);
 
@@ -37,11 +38,19 @@
   }
 }
 
+.mobileSmallMenu {
+  display: flex;
+  width: 100%;
+  align-self: center;
+  justify-content: center;
+}
+
 .menuWrapper_hide {
   display: none;
 }
 
 .menuWrapper_show {
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   margin-top: 0.5rem;
@@ -62,7 +71,7 @@
 .subMenuItem {
   text-decoration: none;
   text-transform: uppercase;
-  color: var( --color-text-grey-dark) !important;
+  color: var(--color-text-grey-dark) !important;
 }
 
 //styles for burger

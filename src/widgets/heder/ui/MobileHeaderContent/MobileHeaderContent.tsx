@@ -7,6 +7,8 @@ import MobileMenuItem from "../MobileMenuItem/MobileMenuItem";
 import styles from "./MobileHeaderContent.module.scss";
 import logo from "@/assets/images/logo.png";
 import Image from "next/image";
+import MobileHeaderUserStatus
+  from "@/widgets/heder/ui/MobileHeaderUserStatus/MobileHeaderUserStatus";
 
 const MobileHeaderContent: React.FC<PropsWithChildren> = ({children}) => {
   const [isActiveMenu, setActiveMenu] = useState(false);
@@ -18,9 +20,15 @@ const MobileHeaderContent: React.FC<PropsWithChildren> = ({children}) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.burgerAndTitleWrapper}>
-        <a href="https://www.yoqi.com">
-          <Image className={styles.logo} src={logo} alt="logo"/>
-        </a>
+        <div>
+          <a href="https://www.yoqi.com">
+            <Image className={styles.logo} src={logo} alt="logo"/>
+          </a>
+        </div>
+        <div className={styles.mobileSmallMenu}>
+          <MobileHeaderUserStatus/>
+        </div>
+        <div style={{width: '50px'}}></div>
         <div
           onClick={toggleMenu}
           className={burgerStyles}

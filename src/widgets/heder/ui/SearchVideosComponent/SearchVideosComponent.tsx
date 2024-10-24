@@ -2,10 +2,9 @@
 
 import React, {useState, useRef, useEffect} from 'react';
 import {Search} from '@/shared';
-import {VscClose} from 'react-icons/vsc';
-import {Input} from '@/shared';
 import styles from './SearchVideosComponent.module.scss';
 import {useRouter} from "next/navigation";
+import SearchInput from "@/features/SearchInput/SearchInput";
 
 const SearchVideosComponent = () => {
   const router = useRouter();
@@ -19,7 +18,7 @@ const SearchVideosComponent = () => {
 
   const handleEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      router.push('/search-videos?search=' + searchValue);
+      router.push('/?search=' + searchValue + '&page=1');
     }
     if (event.key === 'Escape') {
       setInputVisible(false);
@@ -52,21 +51,14 @@ const SearchVideosComponent = () => {
       <Search style={{bottom: '-0.25rem', position: 'relative'}} onClick={handleClick}/>
       {isInputVisible && (
         <div>
-          <Input
-            placeholder="Search…"
+          <SearchInput
             value={searchValue}
             onChange={onChange}
             onKeyDown={handleEnter}
             ref={inputRef}
             autoFocus={true}
             onBlur={handleBlur}
-            style={{padding: '0.2rem 0.5rem', marginLeft: '0.5rem'}}
-            iconEnd={
-              <VscClose
-                style={{cursor: 'pointer', position: "relative", top: '0.1rem'}}
-                onClick={handleClear}
-              />
-            }
+            handleClear={handleClear}
           />
         </div>
       )}

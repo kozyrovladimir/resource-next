@@ -14,9 +14,9 @@ import UserInfoBox from './ui/UserInfoBox';
 
 import styles from './UserAccountContent.module.scss';
 import AccountSwitchHistory from "@/components/AccountSwitchHistory/AccountSwitchHistory";
-import TopLayout from "@/components/TopLayout/TopLayout";
 import BackButton from "@/components/BackButton/BackButton";
 import {useRouter} from "next/navigation";
+import TopLayout from "@/shared/ui/TopLayout/TopLayout";
 
 const UserAccount: React.FC = () => {
   const router = useRouter();
