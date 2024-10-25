@@ -1,24 +1,38 @@
+'use client';
+
 import React from 'react';
 import styles from './VideoPage.module.css';
 import AddToFavourites from "@/features/AddToFavourites/AddToFavourites";
 import {VideoTag} from "@/entities/VideoTag";
-import {SearchOptions, VideoDetailsI} from "@/shared/models";
+import {SearchOptions} from "@/shared/models";
 import KinescopeVideoPlayer from "@/features/KinescopeVideoPlayer/KinescopeVideoPlayer";
+import {useFetchVideo} from "@/utils/hooks/useFetchVideo";
 
 type VideoPageProps = {
-  video: VideoDetailsI;
+  videoID: string;
 };
 
-const VideoPage: React.FC<VideoPageProps> = ({video}) => {
+const VideoPage: React.FC<VideoPageProps> = ({videoID}) => {
+
+  const {videoDetail, isLoadingVideoDetail, errorVideoDetail} = useFetchVideo(videoID);
+
+  if (isLoadingVideoDetail) {
+    return <div>Loading...</div>;
+  }
+
+  if (errorVideoDetail) {
+    return <div>Error: {errorVideoDetail}</div>;
+  }
+
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.videoContainer}>
         <KinescopeVideoPlayer
-          video={video}
+          video={videoDetail}
         />
       </div>
       <div className={styles.infoContainer}>
-        <h2 className={styles.videoTitle}>{video.title}</h2>
+        <h2 className={styles.videoTitle}>{videoDetail.title}</h2>
         <div className={styles.authorInfoContainer}>
           <p className={styles.authorInfoText}>Author: <span>Marisa Cranfill</span></p>
         </div>
@@ -30,45 +44,45 @@ const VideoPage: React.FC<VideoPageProps> = ({video}) => {
           <div className={styles.videoTagsContainer}>
             <VideoTag
               name={SearchOptions.phase}
-              value={video.phase}
+              value={videoDetail.phase}
             />
             <VideoTag
               name={SearchOptions.element}
-              value={video.element}
+              value={videoDetail.element}
             />
             <VideoTag
               name={SearchOptions.organ}
-              value={video.organ}
+              value={videoDetail.organ}
             />
           </div>
           <div className={styles.videoTagsContainer}>
             <VideoTag
               name={SearchOptions.season}
-              value={video.season}
+              value={videoDetail.season}
             />
-            {video.meridian && <VideoTag
+            {videoDetail.meridian && <VideoTag
               name={SearchOptions.meridian}
-              value={video.meridian}
+              value={videoDetail.meridian}
             />}
             <VideoTag
               name={SearchOptions.dantain}
-              value={video.dantian}
+              value={videoDetail.dantian}
             />
           </div>
         </div>
         <p>Clears tention in the belt channel and the kidneys. Clears cold from the
           kidneys. Clears fear, stress, excess cortisol.</p>
-        {video.benefits && <div className={styles.textContainer}>
+        {videoDetail.benefits && <div className={styles.textContainer}>
           <h3>Benefits</h3>
-          <p>{video.benefits}</p>
+          <p>{videoDetail.benefits}</p>
         </div>}
-        <div className={styles.textContainer}>
+        {videoDetail.flow_variations&&<div className={styles.textContainer}>
           <h3>How to do the flow</h3>
-          <p>Do in the best way possible</p>
-        </div>
-        {video.pro_tips && <div className={styles.textContainer}>
+          <p>{videoDetail.flow_variations}</p>
+        </div>}
+        {videoDetail.pro_tips && <div className={styles.textContainer}>
           <h3>Pro Tips</h3>
-          <p>{video.pro_tips}</p>
+          <p>{videoDetail.pro_tips}</p>
         </div>}
       </div>
     </div>
