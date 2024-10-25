@@ -18,11 +18,19 @@ const SearchPanel: React.FC = () => {
 
   const updateQueryString = useUpdateQueryString();
 
-  const [value, setValue] = React.useState('');
+  const initialSearch = new URLSearchParams(window.location.search).get('search');
+  const [value, setValue] = React.useState(initialSearch || '');
   const debouncedValue = useDebounce(value);
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   }
+
+  useEffect(() => {
+    const initialSearch = new URLSearchParams(window.location.search).get('search');
+    if (initialSearch) {
+      setValue(initialSearch);
+    }
+  }, []);
 
   useEffect(() => {
     updateQueryString('search', debouncedValue);
