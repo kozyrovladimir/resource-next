@@ -8,6 +8,7 @@ import {PurchaseInfo} from "@/models/PurchaseInfo";
 import {PurchaseHistoryItem} from "@/models/PurchaseHistory";
 
 const projectID = 3; // This is the project ID for UNIVERSITY
+const baseURL = process.env.API_PATH;
 
 const instance = axios.create({
   // baseURL: 'https://videos.yoqi-test.com/api/',
@@ -22,10 +23,17 @@ export const getVideos = async (): Promise<AxiosResponse<VideoListItemI[]>> => {
   console.log('getVideos');
   return await instance.get<VideoListItemI[]>('movements');
 };
+
 export const getVideo = async (
   videoID: string,
 ): Promise<AxiosResponse<VideoDetailsI>> => {
   return await instance.get<any>(`movements/${videoID}`);
+};
+
+export const getVideoServerSide = async (videoID: string): Promise<VideoDetailsI> => {
+  const response = await fetch(`${baseURL}/movements/${videoID}`);
+  const data = await response.json();
+  return data;
 };
 
 export const login = async (

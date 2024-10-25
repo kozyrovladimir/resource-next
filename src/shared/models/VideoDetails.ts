@@ -1,4 +1,11 @@
-import { ElementT, OrganT, PhaseT, SearchOptions, SeasonT } from './SearchOptions';
+import {
+  DantainT,
+  ElementT, MeridianT,
+  OrganT,
+  PhaseT,
+  SearchOptions,
+  SeasonT
+} from './SearchOptions';
 
 export interface VideoDetailsI {
   id: number;
@@ -7,29 +14,21 @@ export interface VideoDetailsI {
   season: SeasonT;
   organ: OrganT;
   element: ElementT;
-  dantian: string;
-  meridian: string;
+  dantian: DantainT;
+  meridian: MeridianT;
   description: string;
   benefits: string;
-  flowvariations: string;
-  tipstopro: string;
+  flow_variations: string;
+  pro_tips: string;
   link: string;
-  sideview: string;
-  variations: string;
+  sideview_link: string;
+  variations_link: string;
   thumbnail: string | null;
-  createdAt: string | null;
-  updatedAt: string | null;
-  video_refs: videoReferenceI[] | [];
-  add_corresponds: Array<{
-    type: SearchOptions;
-    value: string;
-  }>;
+  titlecard: string | null;
+  cover: string | null;
+  published: boolean;
+  public: boolean;
   is_favorite: boolean;
-}
-
-interface videoReferenceI {
-  reference: string;
-  title: string;
 }
 
 export interface VideoDetailAPIT {

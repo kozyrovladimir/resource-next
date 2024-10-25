@@ -2,16 +2,23 @@ import React from 'react';
 import styles from './VideoPage.module.css';
 import AddToFavourites from "@/features/AddToFavourites/AddToFavourites";
 import {VideoTag} from "@/entities/VideoTag";
-import {SearchOptions} from "@/shared/models";
+import {SearchOptions, VideoDetailsI} from "@/shared/models";
+import KinescopeVideoPlayer from "@/features/KinescopeVideoPlayer/KinescopeVideoPlayer";
 
-const VideoPage = () => {
+type VideoPageProps = {
+  video: VideoDetailsI;
+};
+
+const VideoPage: React.FC<VideoPageProps> = ({video}) => {
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.videoContainer}>
-        <span>Video content</span>
+        <KinescopeVideoPlayer
+          video={video}
+        />
       </div>
       <div className={styles.infoContainer}>
-        <h2 className={styles.videoTitle}>Iron Bridge</h2>
+        <h2 className={styles.videoTitle}>{video.title}</h2>
         <div className={styles.authorInfoContainer}>
           <p className={styles.authorInfoText}>Author: <span>Marisa Cranfill</span></p>
         </div>
@@ -22,47 +29,47 @@ const VideoPage = () => {
         <div className={styles.tagColumnsContainer}>
           <div className={styles.videoTagsContainer}>
             <VideoTag
-              name={SearchOptions.organ}
-              value={'heart'}
+              name={SearchOptions.phase}
+              value={video.phase}
             />
             <VideoTag
               name={SearchOptions.element}
-              value={'earth'}
+              value={video.element}
             />
             <VideoTag
-              name={SearchOptions.dantain}
-              value={'lower'}
+              name={SearchOptions.organ}
+              value={video.organ}
             />
           </div>
           <div className={styles.videoTagsContainer}>
             <VideoTag
-              name={SearchOptions.organ}
-              value={'heart'}
+              name={SearchOptions.season}
+              value={video.season}
             />
-            <VideoTag
-              name={SearchOptions.element}
-              value={'earth'}
-            />
+            {video.meridian && <VideoTag
+              name={SearchOptions.meridian}
+              value={video.meridian}
+            />}
             <VideoTag
               name={SearchOptions.dantain}
-              value={'lower'}
+              value={video.dantian}
             />
           </div>
         </div>
         <p>Clears tention in the belt channel and the kidneys. Clears cold from the
           kidneys. Clears fear, stress, excess cortisol.</p>
-        <div className={styles.textContainer}>
+        {video.benefits && <div className={styles.textContainer}>
           <h3>Benefits</h3>
-          <p>This will help you to enhance all your strenth.</p>
-        </div>
+          <p>{video.benefits}</p>
+        </div>}
         <div className={styles.textContainer}>
           <h3>How to do the flow</h3>
           <p>Do in the best way possible</p>
         </div>
-        <div className={styles.textContainer}>
+        {video.pro_tips && <div className={styles.textContainer}>
           <h3>Pro Tips</h3>
-          <p>Do your best and you will get result</p>
-        </div>
+          <p>{video.pro_tips}</p>
+        </div>}
       </div>
     </div>
   );

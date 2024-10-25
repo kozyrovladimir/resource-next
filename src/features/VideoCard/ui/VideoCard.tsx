@@ -45,7 +45,7 @@ const VideoCard: React.FC<VideoListItemTypeProps> = ({video}) => {
   return (
     <div data-testid="video_card" className={styles.videoCard}>
       <Link href={{
-        pathname: `/video/1`,
+        pathname: `/video/${video.id}`,
       }}
             scroll={true}
       >
