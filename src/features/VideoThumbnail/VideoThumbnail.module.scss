@@ -1,0 +1,59 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.textWrapper {
+    width: 100%;
+}
+
+.settingsWrapper {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 480px) {
+        gap: 8px;
+    }
+}
+
+.helpButtonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:global(.yoqi_button_outlined) {
+    background-color: var(--color-main-white);
+
+    &:hover, &:active {
+        background-color: var(--color-main-black);
+        color: var(--color-main-white);
+    }
+}
+
+// for fix mobile hover
+.button_touchable:global(.yoqi_button_primary_touchable) {
+    &:hover, &:active {
+        background-color: var(--color-main-grey);
+        color: var(--color-main-black);
+    }
+}
+
+.button_active:global(.yoqi_button_primary) {
+    background-color: var(--color-main-black);
+    color: var(--color-main-white);
+}
+
+.button_active_touchable:global(.yoqi_button_primary_touchable) {
+    &:hover, &:active {
+        background-color: var(--color-main-black);
+        color: var(--color-main-white);
+    }
+}

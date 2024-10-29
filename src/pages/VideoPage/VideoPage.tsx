@@ -7,6 +7,8 @@ import {VideoTag} from "@/entities/VideoTag";
 import {SearchOptions} from "@/shared/models";
 import VideoPlayer from "@/features/VideoPlayer/VideoPlayer";
 import {useFetchVideo} from "@/utils/hooks/useFetchVideo";
+import {useIsAuthorised} from "@/utils/hooks/useIsAuthorised";
+import VideoThumbnail from "@/features/VideoThumbnail/VideoThumbnail";
 
 type VideoPageProps = {
   videoID: string;
@@ -16,12 +18,19 @@ const VideoPage: React.FC<VideoPageProps> = ({videoID}) => {
 
   const {videoDetail, isLoadingVideoDetail, errorVideoDetail} = useFetchVideo(videoID);
 
+  const isAuthorised = useIsAuthorised();
+  const accessible = videoDetail.link && videoDetail.sideview_link && videoDetail.variations_link;
+
   if (isLoadingVideoDetail || !videoDetail.id) {
     return <div>Loading...</div>;
   }
 
   if (errorVideoDetail) {
     return <div>Error: {errorVideoDetail}</div>;
+  }
+
+  if (!accessible && !isAuthorised) {
+    return <VideoThumbnail videoDetails={videoDetail} />
   }
 
   return (
