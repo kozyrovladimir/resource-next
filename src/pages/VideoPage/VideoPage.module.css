@@ -8,10 +8,6 @@
 }
 
 .videoContainer {
-    border: 1px solid whitesmoke;
-    border-radius: 16px;
-    height: 400px;
-    padding: 20px;
     flex: 1;
 }
 

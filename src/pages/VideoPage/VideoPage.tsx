@@ -5,7 +5,7 @@ import styles from './VideoPage.module.css';
 import AddToFavourites from "@/features/AddToFavourites/AddToFavourites";
 import {VideoTag} from "@/entities/VideoTag";
 import {SearchOptions} from "@/shared/models";
-import KinescopeVideoPlayer from "@/features/KinescopeVideoPlayer/KinescopeVideoPlayer";
+import VideoPlayer from "@/features/VideoPlayer/VideoPlayer";
 import {useFetchVideo} from "@/utils/hooks/useFetchVideo";
 
 type VideoPageProps = {
@@ -16,7 +16,7 @@ const VideoPage: React.FC<VideoPageProps> = ({videoID}) => {
 
   const {videoDetail, isLoadingVideoDetail, errorVideoDetail} = useFetchVideo(videoID);
 
-  if (isLoadingVideoDetail) {
+  if (isLoadingVideoDetail || !videoDetail.id) {
     return <div>Loading...</div>;
   }
 
@@ -27,7 +27,7 @@ const VideoPage: React.FC<VideoPageProps> = ({videoID}) => {
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.videoContainer}>
-        <KinescopeVideoPlayer
+        <VideoPlayer
           video={videoDetail}
         />
       </div>

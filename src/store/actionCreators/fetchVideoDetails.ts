@@ -26,7 +26,19 @@ export const fetchVideoDetailsAPI = createAsyncThunk<
       dispatch(setUser(true));
     }
 
-    // return {...videoDetails, subscriptionStatus};
+    if (videoDetails.link.length) {
+      videoDetails.link = 'https://iframe.mediadelivery.net/play/209728/88fa6f9b-bb7f-46b2-9b8b-8a2ed4aae2a0'
+    }
+
+    if (videoDetails.sideview_link.length) {
+      videoDetails.sideview_link = 'https://iframe.mediadelivery.net/play/209728/7b67ee7a-b70e-4305-bc48-fb714f47f763'
+    }
+
+    if (videoDetails.variations_link.length) {
+      videoDetails.variations_link = 'https://iframe.mediadelivery.net/play/209728/7d2aa772-e3fd-4604-8640-d428866116fe'
+    }
+
+
     return videoDetails;
   } catch (error) {
     return rejectWithValue(axiosErrorHandler(error));
