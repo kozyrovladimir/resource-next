@@ -1,0 +1,25 @@
+.switcher {
+  margin-top: calc(1.5rem - 2px);
+  color: var(--color-text-grey-dark);
+  text-align: center;
+
+  &Text {
+    text-decoration: underline;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-top: calc(1.25rem - 2px);
+    font-size: 14px;
+  }
+}
+
+.authInformation {
+  display: block;
+  color: var(--color-text-grey-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}

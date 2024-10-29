@@ -26,9 +26,14 @@ export const discountSlice = createSlice({
       state.payment_required = action.payload.payment_required;
       state.message = action.payload.message;
     },
+    clearDiscount(state) {
+      state.discountCode = '';
+      state.payment_required = true;
+      state.message = '';
+    }
   },
 });
 
-export const { setDiscount } = discountSlice.actions;
+export const { setDiscount, clearDiscount } = discountSlice.actions;
 
 export default discountSlice.reducer;

@@ -194,6 +194,15 @@ export const applyDiscount = async (
   });
 };
 
+export const subscribeHere = async (name: string, email: string): Promise<AxiosResponse<{message: string}>> => {
+  return await instance.post('subscribe_to_newsletter',
+    {
+      name: name,
+      email: email,
+    }
+  );
+}
+
 export const addFavorite = async (videoID: number): Promise<AxiosResponse<void>> => {
   return await instance.post(`addFavourite`, {
     id: videoID,

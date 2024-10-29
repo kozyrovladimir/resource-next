@@ -1,0 +1,342 @@
+.backButtonContainer {
+  width: 100%;
+  margin-top: 28px;
+  margin-bottom: 28px;
+
+  @media screen and (max-width: 1366px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.topContent {
+  border-radius: 6px;
+  width: 100%;
+  background-image: url("../../assets/images/subscription-plans/plans.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  height: 300px;
+  padding: 44px 40px 90px 40px;
+
+  @media screen and (max-width: 1366px) {
+    height: 240px;
+    padding: 40px 30px 94px 30px;
+  }
+
+  @media screen and (max-width: 960px) {
+    height: 300px;
+    padding: 40px 40px 40px 40px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 150px;
+  }
+
+  &Title {
+    width: 100%;
+    max-width: 456px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 960px) {
+      max-width: 358px;
+    }
+
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+
+    h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--color-text-black);
+      line-height: 100%;
+
+      @media screen and (max-width: 1366px) {
+        font-size: 30px;
+      }
+
+      @media screen and (max-width: 960px) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  &Descripton {
+    max-width: 690px;
+    width: 100%;
+    margin-bottom: 5vw;
+
+    @media screen and (max-width: 1366px) {
+      max-width: 500px;
+    }
+
+    @media screen and (max-width: 960px) {
+      max-width: 358px;
+    }
+
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+
+    span {
+      //border: 1px solid red;
+      font-size: 24px;
+      line-height: 0.5 !important;
+      font-weight: 500;
+      color: var(--color-text-grey-dark);
+
+      @media screen and (max-width: 1366px) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      @media screen and (max-width: 960px) {
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.mobileTopContentTitle {
+  display: none;
+
+  @media screen and (max-width: 480px) {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text-black);
+    margin-bottom: 16px;
+  }
+}
+
+.mobileTopContentDescripton {
+  display: none;
+
+  @media screen and (max-width: 480px) {
+    display: block;
+    font-size: 14px;
+    color: var(--color-text-grey-dark);
+    margin-bottom: 24px;
+    margin-top: 24px;
+  }
+}
+
+.cardPricesWrapperRelative {
+  position: relative;
+  height: calc(300px - 6vh);
+  margin-bottom: 60px;
+
+  @media screen and (max-width: 1366px) {
+    height: calc(300px - 4vh);
+    margin-bottom: 18px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+    margin-top: 32px;
+
+    position: static;
+    height: auto;
+  }
+}
+
+.cardPricesWrapperAbsolute {
+  position: absolute;
+  padding-left: 80px;
+  padding-right: 80px;
+  top: -6vh;
+  width: 100%;
+  display: flex;
+  gap: 64px;
+  height: 300px;
+
+  @media screen and (max-width: 1366px) {
+    top: -4vh;
+
+    height: 300px;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 32px;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    position: static;
+    width: 100%;
+    top: 0;
+    gap: 30px;
+
+    height: auto;
+  }
+}
+
+.priceCard {
+  width: 100%;
+  height: max-content; //to fix the height of the card
+  padding: 24px 24px;
+  background-color: var(--color-main-grey-light);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-24);
+  line-height: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media screen and (max-width: 1366px) {
+    padding: 20px 24px;
+    gap: 16px;
+  }
+
+  @media screen and (max-width: 960px) {
+    padding: 24px 16px;
+  }
+
+  &Period {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-text-grey-dark);
+    //margin-bottom: 2px;
+
+    @media screen and (max-width: 1366px) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 960px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 16px;
+    }
+  }
+
+  &Price {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--color-text-black);
+
+    @media screen and (max-width: 1366px) {
+      font-size: 40px;
+    }
+  }
+
+  &NotePlainText {
+    height: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-text-grey-dark);
+
+    // fix: depending on the text, the height of the card changes
+    @media screen and (max-width: 995px) {
+      height: 2.4rem;
+    }
+
+    @media screen and (max-width: 960px) {
+      height: 1.2rem;
+    }
+
+    @media screen and (max-width: 915px) {
+      height: 2.4rem;
+    }
+
+    @media screen and (max-width: 766px) {
+      height: 1.2rem;
+    }
+
+    @media screen and (max-width: 310px) {
+      height: 2.4rem;
+    }
+    // --
+  }
+
+  &PerMonth {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-text-grey-dark);
+
+    @media screen and (max-width: 960px) {
+      font-size: 24px;
+    }
+  }
+
+  &Link {
+    text-decoration: none;
+  }
+
+}
+
+.benefitsWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.benefitItem {
+  text-align: center;
+  margin: 20px 20px;
+
+  @media screen and (max-width: 1366px) {
+    margin: 24px 20px;
+  }
+
+
+  @media screen and (max-width: 480px) {
+    margin: 20px 16px;
+  }
+
+  &IconWrapper {
+    width: max-content;
+    margin: 0 auto 30px;
+  }
+
+  &Icon {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &Text {
+    color: var(--color-text-grey-dark);
+
+    &Strong {
+      font-weight: 600;
+      color: var(--color-text-black);
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+}

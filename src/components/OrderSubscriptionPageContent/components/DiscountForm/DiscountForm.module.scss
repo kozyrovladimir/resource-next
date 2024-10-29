@@ -1,0 +1,28 @@
+.errorMessage {
+  color: var(--color-notofication-red);
+}
+
+.infoMessage {
+  color: var(--color-text-grey-dark);
+}
+
+.formContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+      flex-direction: column;
+  }
+}
+
+.inputAddStyles {
+    flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.buttonAddStyles {
+  flex-grow: 1.5;
+  flex-shrink: 1.5;
+}
+

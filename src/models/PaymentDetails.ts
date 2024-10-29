@@ -1,6 +1,6 @@
 import {Products} from "@/shared";
 
-export type ProductType = typeof Products.module1;
+export type ProductType = typeof Products.month | typeof Products.month6 | typeof Products.year;
 
 export interface IStripePaymentDetails {
   pk: string;
