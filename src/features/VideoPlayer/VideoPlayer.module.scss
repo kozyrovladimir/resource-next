@@ -1,0 +1,40 @@
+.button {
+  background-color: var(--color-main-white);
+
+  &:hover, &:active {
+    background-color: var(--color-main-black);
+    color: var(--color-main-white);
+  }
+}
+
+// for fix mobile hover
+.button_touchable:global(.yoqi_button_primary_touchable) {
+  &:hover, &:active {
+    background-color: var(--color-main-grey);
+    color: var(--color-main-black);
+  }
+}
+
+.button_active:global(.yoqi_button_primary) {
+  background-color: var(--color-main-black);
+  color: var(--color-main-white);
+}
+
+.button_active_touchable:global(.yoqi_button_primary_touchable) {
+  &:hover, &:active {
+    background-color: var(--color-main-black);
+    color: var(--color-main-white);
+  }
+}
+
+.buttonsWrapper {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 480px) {
+    margin-top: 8px;
+    gap: 8px;
+  }
+}
