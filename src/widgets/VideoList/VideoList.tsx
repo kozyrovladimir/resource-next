@@ -42,7 +42,7 @@ const VideoList: React.FC<VideoListType> = ({isTableView}) => {
   }
 
   if (!filteredVideosBySearch.length) {
-    return <div>No videos found</div>;
+    return <div>No flows found</div>;
   }
 
   const maxItems = 12;
