@@ -11,13 +11,14 @@ const projectID = 3; // This is the project ID for UNIVERSITY
 const baseURL = process.env.API_PATH;
 
 const instance = axios.create({
-  // baseURL: 'https://videos.yoqi-test.com/api/',
   baseURL: '/api',
   withCredentials: true,
   headers: {
     'Cache-Control': 'max-age=3600',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-  }
+    ...(typeof window !== 'undefined' && {
+      'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+    }),
+  },
 });
 
 export const getVideos = async (): Promise<AxiosResponse<VideoListItemI[]>> => {
