@@ -74,7 +74,7 @@ const VideoPage: React.FC<VideoPageProps> = ({videoID}) => {
               value={videoDetail.meridian}
             />}
             <VideoTag
-              name={SearchOptions.dantain}
+              name={SearchOptions.dantian}
               value={videoDetail.dantian}
             />
           </div>

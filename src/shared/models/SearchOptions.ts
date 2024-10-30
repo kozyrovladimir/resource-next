@@ -3,7 +3,7 @@ export enum SearchOptions {
   season = 'season',
   element = 'element',
   organ = 'organ',
-  dantain = 'dantain',
+  dantian = 'dantian',
   meridian = 'meridian',
 }
 
@@ -109,6 +109,6 @@ export type SearchValueType<T extends SearchOptions> =
     T extends SearchOptions.season ? SeasonT :
       T extends SearchOptions.element ? ElementT :
         T extends SearchOptions.organ ? OrganT :
-          T extends SearchOptions.dantain ? DantainT :
+          T extends SearchOptions.dantian ? DantainT :
             T extends SearchOptions.meridian ? MeridianT :
             never;
