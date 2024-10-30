@@ -27,6 +27,7 @@ export const useLogout = () => {
       await api.logout().then(() => {
         // temporary solution for delete token from local storage
         localStorage.removeItem('token');
+        dispatch(setUser(false));
       });
     } catch (error: any) {
       setIsLoggingOut(false);

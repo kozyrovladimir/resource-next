@@ -44,8 +44,8 @@ export function useLoginForm(successFunction?: () => void): UseLoginFormI {
           // temporary solution for setting token to local storage
           localStorage.setItem('token', response.data.token);
 
-          dispatch(setUser(true)) &&
           dispatch(fetchUserData());
+          dispatch(setUser(true));
           setErrorMessage(undefined);
           // if successFunction is passed, call it
           if (successFunction) {
