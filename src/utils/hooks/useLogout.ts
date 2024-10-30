@@ -25,9 +25,8 @@ export const useLogout = () => {
       setLogoutError(null);
       // Выполняем POST-запрос на сервер для выхода пользователя.
       await api.logout().then(() => {
-        // temporary solution for setting token to cookies
-        //delete token to cookies for domain '.vercel.app', name 'Auth_token'
-        document.cookie = `Auth_token=; path=/; domain=.vercel.app;`;
+        // temporary solution for delete token from local storage
+        localStorage.removeItem('token');
       });
     } catch (error: any) {
       setIsLoggingOut(false);

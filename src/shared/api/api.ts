@@ -16,6 +16,7 @@ const instance = axios.create({
   withCredentials: true,
   headers: {
     'Cache-Control': 'max-age=3600',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`,
   }
 });
 
