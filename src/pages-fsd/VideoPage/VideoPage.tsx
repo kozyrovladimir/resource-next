@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './VideoPage.module.css';
 import AddToFavourites from "@/features/AddToFavourites/AddToFavourites";
 import {VideoTag} from "@/entities/VideoTag";
@@ -16,10 +16,14 @@ type VideoPageProps = {
 
 const VideoPage: React.FC<VideoPageProps> = ({videoID}) => {
 
-  const {videoDetail, isLoadingVideoDetail, errorVideoDetail} = useFetchVideo(videoID);
+  const {videoDetail, isLoadingVideoDetail, errorVideoDetail, refreshVideoDetails} = useFetchVideo(videoID);
 
   const isAuthorised = useIsAuthorised();
   const accessible = videoDetail.link && videoDetail.sideview_link && videoDetail.variations_link;
+
+  useEffect(() => {
+    refreshVideoDetails();
+  }, [isAuthorised]);
 
   if (isLoadingVideoDetail || !videoDetail.id) {
     return <div>Loading...</div>;

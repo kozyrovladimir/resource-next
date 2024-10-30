@@ -16,11 +16,15 @@ export const useFetchVideo = (videoId: string) => {
     state => state.videoDetailsAPI,
   );
 
+  const refreshVideoDetails = () => {
+    dispatch(fetchVideoDetailsAPI({videoId: videoId}));
+  }
+
   useEffect(() => {
     if (videoId) {
       dispatch(fetchVideoDetailsAPI({videoId: videoId}));
     }
   }, [videoId]);
 
-  return {videoDetail, isLoadingVideoDetail, errorVideoDetail};
+  return {videoDetail, isLoadingVideoDetail, errorVideoDetail, refreshVideoDetails};
 }
