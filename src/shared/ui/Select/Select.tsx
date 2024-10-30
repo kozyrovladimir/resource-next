@@ -1,7 +1,7 @@
 "use client";
 
 import * as SelectRadix from '@radix-ui/react-select';
-import React from 'react';
+import React, {Suspense} from 'react';
 import {VscChevronDown, VscClose} from "react-icons/vsc";
 import styles from './Select.module.scss';
 import {useSearchParams} from "next/navigation";

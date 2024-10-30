@@ -1,4 +1,4 @@
-import {HomePage} from "@/pages/HomePage/HomePage";
+import {HomePage} from "@/pages-fsd/HomePage/HomePage";
 
 export default async function Home() {
   return (

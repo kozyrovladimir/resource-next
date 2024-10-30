@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoPageContent from '@/pages/VideoPage/VideoPage';
+import VideoPageContent from '@/pages-fsd/VideoPage/VideoPage';
 import TopLayout from "@/shared/ui/TopLayout/TopLayout";
 import BackButton from "@/components/BackButton/BackButton";
 import Link from "next/link";
