@@ -45,7 +45,6 @@ export function useLoginForm(successFunction?: () => void): UseLoginFormI {
           localStorage.setItem('token', response.data.token);
 
           dispatch(fetchUserData());
-          dispatch(setUser(true));
           setErrorMessage(undefined);
           // if successFunction is passed, call it
           if (successFunction) {
