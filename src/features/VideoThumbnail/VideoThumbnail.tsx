@@ -10,6 +10,8 @@ import {useDialog} from "@/utils/hooks/useDialog";
 import {useRouter} from "next/navigation";
 import {Button, UserDialog} from "@/shared";
 import {VideoDetailsI} from "@/shared/models";
+import styles from "@/features/VideoPlayer/VideoPlayer.module.scss";
+import {clsx} from "clsx";
 
 interface VideoThumbnailProps {
   videoDetails: VideoDetailsI;
@@ -30,6 +32,24 @@ const VideoThumbnail: React.FC<VideoThumbnailProps> = ({videoDetails}) => {
   }
   const navigateToSubscription = () => {
     router.push('/subscription-plans');
+  }
+
+  const isTouchDevice = 'ontouchstart' in document.documentElement;
+
+  const classNames = {
+    mainButton: clsx(
+      styles.button,
+      styles.button_active,
+      isTouchDevice && styles.button_active_touchable,
+    ),
+    sideButton: clsx(
+      styles.button,
+      isTouchDevice && styles.button_touchable,
+    ),
+    variationsButton: clsx(
+      styles.button,
+      isTouchDevice && styles.button_touchable,
+    ),
   }
 
   return (
@@ -94,6 +114,14 @@ const VideoThumbnail: React.FC<VideoThumbnailProps> = ({videoDetails}) => {
           </div>
         </div>
       </Box>
+      <div className={styles.buttonsWrapper}>
+        <Button variant={'primary'} disabled={true}
+                className={classNames.mainButton}>Main</Button>
+        <Button variant={'outlined'} disabled={true}
+                className={classNames.sideButton}>Side view</Button>
+        <Button variant={'outlined'} disabled={true}
+                className={classNames.variationsButton}>Variations</Button>
+      </div>
     </>
   );
 }

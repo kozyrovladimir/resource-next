@@ -59,6 +59,10 @@
     display: flex;
     gap: 80px;
 
+    @media (max-width: 960px) {
+        gap: 40px;
+    }
+
     @media (max-width: 480px) {
        flex-direction: column;
         gap: 16px;

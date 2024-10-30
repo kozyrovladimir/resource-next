@@ -1,6 +1,6 @@
 .tagContainer {
     display: flex;
-    width: 160px;
+    width: 200px;
     justify-content: space-between;
 
     line-height: 100%;

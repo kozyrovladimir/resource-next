@@ -29,16 +29,16 @@ const VideoPage: React.FC<VideoPageProps> = ({videoID}) => {
     return <div>Error: {errorVideoDetail}</div>;
   }
 
-  if (!accessible && !isAuthorised) {
-    return <VideoThumbnail videoDetails={videoDetail} />
-  }
-
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.videoContainer}>
-        <VideoPlayer
-          video={videoDetail}
-        />
+        {
+          !accessible || !isAuthorised ? (
+            <VideoThumbnail videoDetails={videoDetail} />
+          ) : (
+            <VideoPlayer video={videoDetail} />
+          )
+        }
       </div>
       <div className={styles.infoContainer}>
         <h2 className={styles.videoTitle}>{videoDetail.title}</h2>
@@ -46,7 +46,7 @@ const VideoPage: React.FC<VideoPageProps> = ({videoID}) => {
           <p className={styles.authorInfoText}>Author: <span>Marisa Cranfill</span></p>
         </div>
         <AddToFavourites
-          id={1}
+          id={videoDetail.id}
           isFavouriteInitial={false}
         />
         <div className={styles.tagColumnsContainer}>
