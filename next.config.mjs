@@ -20,14 +20,6 @@ const nextConfig = {
     experimental: {
         missingSuspenseWithCSRBailout: false,
     },
-    async rewrites() {
-        return [
-            {
-                source: '/api/:path*',
-                destination: `${API_URL}/:path*`,
-            },
-        ]
-    },
 };
 
 export default nextConfig;
