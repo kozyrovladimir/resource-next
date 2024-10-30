@@ -79,8 +79,6 @@ const VideoPage: React.FC<VideoPageProps> = ({videoID}) => {
             />
           </div>
         </div>
-        <p>Clears tention in the belt channel and the kidneys. Clears cold from the
-          kidneys. Clears fear, stress, excess cortisol.</p>
         {videoDetail.benefits && <div className={styles.textContainer}>
           <h3>Benefits</h3>
           <p>{videoDetail.benefits}</p>
