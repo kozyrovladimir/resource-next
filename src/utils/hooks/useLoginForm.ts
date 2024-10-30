@@ -9,6 +9,8 @@ import {userSlice} from '@/store/reducers/user-reducer.slice';
 import {fetchUserData} from "@/store/actionCreators/fetchUserData";
 import {AppDispatch} from "@/store/store";
 import {UseLoginFormI} from "@/models/LogInForm";
+import {cookies} from "next/headers";
+import {AxiosResponse} from "axios";
 
 export function useLoginForm(successFunction?: () => void): UseLoginFormI {
   const dispatch = useDispatch<AppDispatch>();
@@ -39,6 +41,11 @@ export function useLoginForm(successFunction?: () => void): UseLoginFormI {
       api
         .login(castedValues.email, castedValues.password)
         .then((response) => {
+          // temporary solution for setting token to cookies
+          //set token to cookies for domain '.vercel.app', name 'Auth_token'
+          console.log('set token to cookies for domain .vercel.app');
+          document.cookie = `Auth_token=${response.data.token}; path=/; domain=.vercel.app;`;
+
           dispatch(setUser(true)) &&
           dispatch(fetchUserData());
           setErrorMessage(undefined);

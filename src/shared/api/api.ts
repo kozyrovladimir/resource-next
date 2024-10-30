@@ -39,7 +39,7 @@ export const getVideoServerSide = async (videoID: string): Promise<VideoDetailsI
 export const login = async (
   email: string,
   password: string,
-): Promise<AxiosResponse<void>> => {
+): Promise<AxiosResponse<{token: string}>> => {
   return await instance.post('login', {email, password});
 };
 
