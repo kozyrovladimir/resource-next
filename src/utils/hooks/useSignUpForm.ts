@@ -46,7 +46,6 @@ export function useSignUpForm(successFunction?: () => void): SignUpFormI {
         .signUp(castedValues.email, castedValues.name, castedValues.password)
         .then()
         .then(() => {
-          // @ts-expect-error
           api.login(castedValues.email, castedValues.password).then((response: {
             data: { token: string }
           }) => {
